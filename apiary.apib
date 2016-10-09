@@ -1,0 +1,196 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# SI-API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Games [/games]
+
+### List All Games [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "desc": "all unicodes ",
+                "published_at": "2016-10-08T08:40:51.620Z",
+                "games": {
+                    {
+                        "unicode": "2016"
+                        "homeTeamName": "Arsenal",
+                        "awayTeamName": "Tottenham Hotspur",
+                        "score": "2-1"
+                    }, {
+                        "unicode": "2016"
+                        "homeTeamName": "Arsenal",
+                        "awayTeamName": "Tottenham Hotspur",
+                        "score": "2-1"
+                    }, {
+                        "unicode": "2016"
+                        "homeTeamName": "Arsenal",
+                        "awayTeamName": "Tottenham Hotspur",
+                        "score": "2-1"
+                    }, {
+                        "unicode": "2016"
+                        "homeTeamName": "Arsenal",
+                        "awayTeamName": "Tottenham Hotspur",
+                        "score": "2-1"
+                    }
+                }
+            }
+        ]
+
+## ZIXUN [/matchInfo/1139]
+### zixunone [GET]
++ Response 200 (application/json)
+
+        {
+            "matchId":1139,
+            "homeName":"拉普拉塔体操",
+            "awayName":"拉斐拉竞技",
+            "weather":"雨",
+            "homeFormation":"4-2-1-3",
+            "awayFormation":"4-2-3-1",
+            "homeStar":3,
+            "awayStar":4,
+            "homeLatest5":"2X2undefinedundefined",
+            "awayLatest5":"11Xundefinedundefined",
+            "homeSummary":"拉普拉斯(Pierre-Simon Laplace,1749－1827)是法国分析学家、概率论学家和物理学家，法国科学院院士。1749年3月23日生于法国西北部卡尔瓦多斯的博蒙昂诺日，1827年3月5日卒于巴黎。1816年被选为法兰西学院院士，1817年任该院院长。1812年发表了重要的《概率分析理论》一书，在该书中总结了当时整个概率论的研究，论述了概率在选举审判调查、气象等方面的应用，导入「拉普拉斯变换」等。他是决定论的支持者，提出了拉普拉斯妖。他致力于挽救世袭制的没落：他当了六个星期的拿破仑的内政部长，后来成为元老院的掌玺大臣，并在拿破仑皇帝时期和路易十八时期两度获颁爵位，后被选为法兰西学院院长。拉普拉斯曾任拿破仑的老师，所以和拿破仑",
+            "awaySummary":"所属国家 阿根廷拉斐拉竞技是一支来自阿根廷圣塔菲省拉斐拉市的足球队，球队创始于1970年。2002-03 赛季，拉斐拉竞技从乙级联赛突围冲上甲级。次年在甲级联赛降级附加赛中落败，回到乙级联赛。09年球队又有一次冲上甲级的机会，再第一回合3:0获胜的情 况下，居然第二回合以同样比分输了个0:3被拉普拉塔体操队所阻，只得继续停留在乙级联赛。2011年5月21日，球队终于通过打败图库曼竞技队，再次回 到甲级联赛。",
+            "homeinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            "homesuspended":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            "homepossibleinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            "awayinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            "awaysuspended":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            "awaypossibleinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
+            
+            "matchDate":"2016-09-20 08:15:00",
+            "leagueName":"阿根廷甲级联赛",
+            
+            
+            "homeBattleFormation":[{
+            "position":"门将",
+            "name":"曼努埃尔.加西亚",
+            "playerid":1213,
+            "importance":"关键球员"
+           },
+           {
+            "position":"守门员",
+            "name":"阿里亚斯·马丁",
+            "playerid":1214,
+           "importance":"关键球员"
+           },
+           {
+           "position":"后卫",
+           "name":"C.拉莫斯",
+           "playerid":1215,
+           "importance":"普通球员"
+           }],
+           
+           "awayBattleFormation":[{
+           "position":"门将",
+            "name":"曼努埃尔.加西亚",
+            "playerid":1213,
+            "importance":"关键球员"
+           },
+           {
+            "position":"守门员",
+            "name":"阿里亚斯·马丁",
+            "playerid":1214,
+           "importance":"关键球员"
+           },
+           {
+           "position":"后卫",
+           "name":"C.拉莫斯",
+           "playerid":1215,
+           "importance":"普通球员"
+           }]
+        }
+        
+        
+        
+## ZIXUN [/player/1139]
+### zixuntwo [GET]
++ Response 200 (application/json)
+
+        
+         {
+           "playerName":"曼努埃尔.加西亚",
+           "importance":"关键球员",
+           "position":"守门员",
+           "nationality":"美国",
+           "team":"切希尔",
+           "playerid":1213,
+           "matchNum":5,
+           "firstNum":3,
+           "goalNum":6,
+           "yellNum":0,
+           "redNum":2,
+           "fiveGames":[{
+                "homeName":"切尔西",
+                "awayName":"利物浦",
+                "score":"1-2",
+                "bunko":"输",
+                "expression":"4-5-6-7"
+           },{
+                "homeName":"切尔西",
+                "awayName":"利物浦",
+                "score":"1-2",
+                "bunko":"输",
+                "expression":"1-2-4-5-6-7"
+           },{
+                "homeName":"切尔西",
+                "awayName":"利物浦",
+                "score":"1-2",
+                "bunko":"输",
+                "expression":"1-2-3-4-5"
+           },{
+                "homeName":"切尔西",
+                "awayName":"利物浦",
+                "score":"1-2",
+                "bunko":"输",
+                "expression":"1-7"
+           },{
+                "homeName":"切尔西",
+                "awayName":"利物浦",
+                "score":"1-2",
+                "bunko":"输",
+                "expression":"1-2-3-4-5-6-7"
+           }]
+           }
+        
+        
+## ZIXUN [/matches/1215]
+### zixunthree [GET]
++ Response 200 (application/json)
+
+        
+           {
+              "homeName":"拉普拉塔体操",
+              "awayName":"拉斐拉竞技",
+              "homeGoalAverage":0.2,
+              "awayGoalAverage":1.4,
+              "homeFumbleAverage":1.1,
+              "awayFumbleAverage":1.2,
+              "homeFumbleNo":2,
+              "awayFumbleNo":2,
+              "homeScoreNo":1.3,
+              "awayScoreNo":1.3,
+              "keyEvents":[{
+                "minute":10,
+                "eventDesc":"进球",
+                "team":2,
+                "playerid":33
+                },{
+                "minute":21,
+                "eventDesc":"黄牌",
+                "team":1,
+                 "playerid":45
+                },{
+                "minute":43,
+                "eventDesc":"红牌",
+                "team":2,
+                 "playerid":12
+                 }
+                ]
+           }
