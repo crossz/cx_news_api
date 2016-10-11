@@ -41,7 +41,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         ]
 
 ## ZIXUN [/matchInfo/1139]
-### zixunone [GET]
+ 根据matchnews_id查询赛事信息
+### matchInfo/...matchnews_id... [GET]
 + Response 200 (application/json)
 
         {
@@ -112,7 +113,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         
         
 ## ZIXUN [/player/1213]
-### zixuntwo [GET]
+ 根据球员id查询球员发挥统计
+### player/...playerid... [GET]
 + Response 200 (application/json)
 
         
@@ -164,7 +166,8 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         
         
 ## ZIXUN [/matches/1139]
-### zixunthree [GET]
+ 根据matchnews_id查询球队表现对比
+### matches/...matchnews_id... [GET]
 + Response 200 (application/json)
 
         
@@ -213,8 +216,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 ]
            }
            
-## ZIXUN [/queryMatchID/201610086007]
-### zixunfour [GET]
+## ZIXUN - id [/queryMatchID/201610086007]
+ 根据uniqueID查询比赛对应的 matchnews_id
+### queryMatchID/...id... [GET]
 + Response 200 (application/json)
 
         {
