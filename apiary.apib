@@ -185,11 +185,21 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 ]
            }
            
-## ZIXUN - id [/queryMatchID/201610086007]
+## SIZIXUN - id [/querySIMatchID/201610086007]
  根据uniqueID查询比赛对应的 matchnews_id
-### queryMatchID/...id... [GET]
+### querySIMatchID/...id... [GET]
 + Response 200 (application/json)
 
         {
           "caiex_matchnews_id":1139
+           }
+           
+           
+## ZIXUN - id [/queryMatchID/201610086007]
+ 根据uniqueID查询比赛对应的 matchID
+### queryMatchID/...id... [GET]
++ Response 200 (application/json)
+
+        {
+          "matchID":1139
            }
