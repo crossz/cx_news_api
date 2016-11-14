@@ -203,3 +203,130 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         {
           "matchID":1139
            }
+           
+           
+## Game - MatchInfo [/tabList/getMatchInfo.shtml?dateVal={dateVal}&payout_type={payout_type}&player_id={player_id}]
+
+  赛事列表
+  /{dateVal}/{payout_type}/{player_id}]
+  
++ Parameters
+    + dateVal: `2016-11-11` (timestamp) - picked date 
+    + payout_type: `2` (number) - game type 1 or 2
+    + player_id: `46` (number) - wechat id
+  
+### getMatchInfo for the default list [GET]
++ Response 200 (application/json)
+
+        {
+            "data":{
+                "gameList":[
+                    {
+                        "auto_payout":1,
+                        "auto_sync":1,
+                        "awayUrl":null,
+                        "bonus":0,
+                        "championJoinState":0,
+                        "champion_game_bonus":null,
+                        "champion_game_state":1,
+                        "champion_payout_state":1,
+                        "champion_player_now":0,
+                        "countGame":null,
+                        "create_time":"2016-11-10 18:00:00",
+                        "create_user":null,
+                        "create_user_name":null,
+                        "date":null,
+                        "end_sign_time":"2016-11-11 00:00:00",
+                        "freeJoinState":0,
+                        "free_game_bonus":null,
+                        "free_game_state":0,
+                        "free_payout_state":1,
+                        "free_player_now":0,
+                        "game_id":201605242534,
+                        "game_start_time":"2016-11-11 00:00:00",
+                        "game_type":null,
+                        "gpFree_id":null,
+                        "gpGame_id":null,
+                        "hadTcl":null,
+                        "half_score":"1-1",
+                        "hhadTcl":null,
+                        "homeUrl":null,
+                        "isclick":false,
+                        "isclickFree":false,
+                        "isclickGame":false,
+                        "keyEvents":null,
+                        "match_code":"201611104002",
+                        "match_league":"\u56FD\u9645\u53CB\u8C0A",
+                        "match_league_id":null,
+                        "match_score":"2-1",
+                        "match_state":2,
+                        "match_teams":"\u5361\u5854\u5C14 vs \u4FC4\u7F57\u65AF",
+                        "match_time":null,
+                        "num":null,
+                        "player_limit":null,
+                        "price_limit":null,
+                        "res":null,
+                        "reward_percent":"50,30,10",
+                        "sign_cost":1000,
+                        "sport_type":1,
+                        "sum_jackpot":0,
+                        "w500":null
+                    },
+                    {
+                        "auto_payout":1,
+                        "auto_sync":1,
+                        "awayUrl":null,
+                        "bonus":0,
+                        "championJoinState":0,
+                        "champion_game_bonus":null,
+                        "champion_game_state":1,
+                        "champion_payout_state":1,
+                        "champion_player_now":0,
+                        "countGame":null,
+                        "create_time":"2016-11-10 18:30:00",
+                        "create_user":null,
+                        "create_user_name":null,
+                        "date":null,
+                        "end_sign_time":"2016-11-11 00:30:00",
+                        "freeJoinState":0,
+                        "free_game_bonus":null,
+                        "free_game_state":0,
+                        "free_payout_state":1,
+                        "free_player_now":0,
+                        "game_id":201605242535,
+                        "game_start_time":"2016-11-11 00:30:00",
+                        "game_type":null,
+                        "gpFree_id":null,
+                        "gpGame_id":null,
+                        "hadTcl":null,
+                        "half_score":"2-0",
+                        "hhadTcl":null,
+                        "homeUrl":null,
+                        "isclick":false,
+                        "isclickFree":false,
+                        "isclickGame":false,
+                        "keyEvents":null,
+                        "match_code":"201611104003",
+                        "match_league":"\u7403\u4F1A\u53CB\u8C0A",
+                        "match_league_id":null,
+                        "match_score":"3-0",
+                        "match_state":2,
+                        "match_teams":"\u6155\u5C3C\u9ED11860 vs \u56E0\u6208\u5C14\u65BD\u5854\u7279",
+                        "match_time":null,
+                        "num":null,
+                        "player_limit":null,
+                        "price_limit":null,
+                        "res":null,
+                        "reward_percent":"50,30,10",
+                        "sign_cost":1000,
+                        "sport_type":1,
+                        "sum_jackpot":0,
+                        "w500":null
+                    }
+                ]
+            },
+            "result":{
+                "resultCode":1,
+                "resultMsg":null
+            }
+        }
