@@ -7,203 +7,418 @@ SI资讯的数据接口-微信版
 
 
 
-## ZIXUN - 赛事信息 [/matchInfo/1139]
- 根据matchnews_id查询赛事信息
-### matchInfo/...matchnews_id... [GET]
+## SINA Ying - 中文资讯 [/matchInfo_cn?matchId={matchId}]
+
+中文内容 - 中英文的 Id 通过另外一个接口获取
+
++ Parameters
+    + matchId: `1284` (number) - cn match id
+    
+### matchInfo_cn [GET]
 + Response 200 (application/json)
 
         {
-            "matchId":1139,
-            "homeName":"拉普拉塔体操",
-            "awayName":"拉斐拉竞技",
-            "homeImage":"web_img/zhudui.png",
-            "awayImage":"web_img/kedui.png",
-            "weather":"雨",
-            "homeFormation":"4-2-1-3",
-            "awayFormation":"4-2-3-1",
-            "homeStar":3,
-            "awayStar":4,
-            "homeLatest5":"2X212",
-            "homeAtHomeLatest5":"11X2X",
-            "awayLatest5":"11X21",
-            "awayAtAwayLatest5":"2X21X",
-            "homeSummary":"拉普拉塔体操上轮客胜沙兰迪兵工厂，联赛斩获4连胜，近9轮6胜3平不败，周中球队在杯赛中点球淘汰圣达菲联；后卫奥雷哈和替补前锋孔特雷拉斯因伤周中未随队出征，周末需要等待检查，后卫利希特养伤。戈多伊克鲁斯上轮大胜北古斯路，连续6个主场不败，不过近5个客场1平4负且没有进球；前锋阿约韦、后卫维埃拉解禁待命，前锋梅尔卡多有伤。",
-            "awaySummary":"拉斐拉竞技客场面对纽维尔老男孩。上半场比赛双方没有取得进球，半场以0-0的比分结束；下半场比赛双方各进1球，最终拉斐拉竞技客场1-1战平纽维尔老男孩。拉斐拉竞技近期表现不佳，近6场比赛都没有取得胜利，球队目前状态十分糟糕。本场比赛，拉斐拉竞技主场面对近况出色的竞技俱乐部，受到近期不胜的影响，拉斐拉竞技主场或会不敌对手。拉斐拉竞技是一支来自阿根廷圣塔菲省拉斐拉市的足球队，球队创始于1970年。2002-03 赛季，拉斐拉竞技从乙级联赛突围冲上甲级。次年在甲级联赛降级附加赛中落败，回到乙级联赛。09年球队又有一次冲上甲级的机会，再第一回合3:0获胜的情 况下，居然第二回合以同样比分输了个0:3被拉普拉塔体操队所阻，只得继续停留在乙级联赛。2011年5月21日，球队终于通过打败图库曼竞技队，再次回 到甲级联赛。",
-            "homeinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            "homesuspended":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            "homepossibleinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            "awayinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            "awaysuspended":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            "awaypossibleinjury":"沙柏迪利安度,S.戈加,法昆多.奧雷加",
-            
-            "matchDate":"2016-09-20 08:15:00",
-            "leagueName":"阿根廷甲级联赛",
-            
-            
-            "homeBattleFormation":[{
-            "position":"门将",
-            "name":"曼努埃尔.加西亚",
-            "playerid":1213,
-            "importance":"关键球员"
-           },
-           {
-            "position":"守门员",
-            "name":"阿里亚斯·马丁",
-            "playerid":1213,
-           "importance":"关键球员"
-           },
-           {
-           "position":"后卫",
-           "name":"C.拉莫斯",
-           "playerid":1213,
-           "importance":"普通球员"
-           }],
-           
-           "awayBattleFormation":[{
-           "position":"门将",
-            "name":"曼努埃尔.加西亚",
-            "playerid":1213,
-            "importance":"关键球员"
-           },
-           {
-            "position":"守门员",
-            "name":"阿里亚斯·马丁",
-            "playerid":1213,
-           "importance":"关键球员"
-           },
-           {
-           "position":"后卫",
-           "name":"C.拉莫斯",
-           "playerid":1213,
-           "importance":"普通球员"
-           }]
+        "leagueName": "英格兰超级联赛",
+        "homeBattleFormation": [],
+        "homeStar": 4,
+        "homesuspended": "菲尔·贾吉尔卡,亚尼克·博拉西耶,穆罕默德·贝希奇",
+        "awaypossibleinjury": "马蒂普,格鲁伊奇,埃姆雷·坎,丹尼尔·斯图里奇,奥利吉",
+        "awayBattleFormation": [],
+        "weather": null,
+        "awayhomeLatest5": "1X21X",
+        "homeLatest5": "12X2X",
+        "homeawayLatest5": "12X2X",
+        "awaySummary": "<p>利物浦本赛季不败能力强劲，近18场正赛仅输掉一场，战绩为13胜4平1负，打入48球失16球，攻守俱佳。</p>\n",
+        "awayLatest5": "1X21X",
+        "awaysuspended": null,
+        "awayawayLatest5": "1X21X",
+        "awayStar": 4,
+        "homepossibleinjury": null,
+        "awayAtAwayLatest5": "12X11",
+        "homeSummary": "<p>埃弗顿上场英超主场2-1大逆转第2的阿森纳，打破其14场不败和客场不败金身，并结束自身5场不胜的尴尬，士气高涨。</p>\n",
+        "awayinjury": "菲利佩·库蒂尼奥,丹尼·爱格斯",
+        "homeFormation": "",
+        "homeAtHomeLatest5": "1XX1X",
+        "matchDate": "2016-12-20 04:00:00",
+        "awayName": "利物浦",
+        "matchId": 1284,
+        "homeinjury": null,
+        "homeName": "埃弗顿",
+        "homehomeLatest5": "12X2X",
+        "awayFormation": ""
         }
-        
-        
-        
-## ZIXUN - 球员发挥统计 [/player/1213]
- 根据球员id查询球员发挥统计
-### player/...playerid... [GET]
-+ Response 200 (application/json)
 
-        
-         {  
-           "playerImg":"web_img/0.jpg",
-           "playerName":"曼努埃尔.加西亚",
-           "importance":"关键球员",
-           "position":"守门员",
-           "nationality":"美国",
-           "team":"切希尔",
-           "playerid":1213,
-           "matchNum":5,
-           "firstNum":3,
-           "goalNum":6,
-           "yellNum":0,
-           "redNum":2,
-           "fiveGames":[{
-                "homeName":"切尔西",
-                "awayName":"利物浦",
-                "score":"1:2",
-                "bunko":"赢",
-                "expression":"4-5-6-7"
-           },{
-                "homeName":"切尔西",
-                "awayName":"利物浦",
-                "score":"1:2",
-                "bunko":"输",
-                "expression":"1-2-4-5-6-7"
-           },{
-                "homeName":"切尔西",
-                "awayName":"利物浦",
-                "score":"1:2",
-                "bunko":"赢",
-                "expression":"1-2-3-4-5"
-           },{
-                "homeName":"切尔西",
-                "awayName":"利物浦",
-                "score":"1:2",
-                "bunko":"输",
-                "expression":"1-7"
-           },{
-                "homeName":"切尔西",
-                "awayName":"利物浦",
-                "score":"1-2",
-                "bunko":"输",
-                "expression":"1-2-3-4-5-6-7"
-           }]
-           }
-        
-        
-## ZIXUN - 球队表现对比 [/matches/1139]
- 根据matchnews_id查询球队表现对比
-### matches/...matchnews_id... [GET]
-+ Response 200 (application/json)
 
-        
-           {
-              "homeName":"拉普拉塔体操",
-              "awayName":"拉斐拉竞技",
-              "homeGoalAverage":0.2,
-              "awayGoalAverage":1.4,
-              "homeFumbleAverage":1.1,
-              "awayFumbleAverage":1.2,
-              "homeFumbleNo":2,
-              "awayFumbleNo":2,
-              "homeScoreNo":1.3,
-              "awayScoreNo":1.12,
-              "keyEvents":[{
-                "minute":10,
-                "eventType":1,
-                "eventDesc":"进球",
-                "team":2,
-                "playerid":33
-                },{
-                "minute":21,
-                "eventType":5,
-                "eventDesc":"黄牌",
-                "team":1,
-                 "playerid":45
-                },{
-                "minute":43,
-                "eventType":6,
-                "eventDesc":"红牌",
-                "team":2,
-                 "playerid":12
-                 },{
-                "minute":55,
-                "eventType":6,
-                "eventDesc":"红牌",
-                "team":1,
-                 "playerid":44
-                 },{
-                "minute":77,
-                "eventType":1,
-                "eventDesc":"进球",
-                "team":1,
-                 "playerid":12
-                 }
-                ]
-           }
-           
-## SIZIXUN - id [/querySIMatchID/201610086007]
- 根据uniqueID查询比赛对应的 matchnews_id
-### querySIMatchID/...id... [GET]
+
+
+## SINA Ying - 英文资讯 [/matchInfo_en?matchId={matchId}]
+
+英文内容 - 中英文的 Id 通过另外一个接口获取
+
++ Parameters
+    + matchId: `113182` (number) - game id
+    
+### matchInfo_en [GET]
 + Response 200 (application/json)
 
         {
-          "caiex_matchnews_id":1139
-           }
-           
-           
-## ZIXUN - id [/queryMatchID/201610086007]
- 根据uniqueID查询比赛对应的 matchID
-### queryMatchID/...id... [GET]
+        "awaysuspended": null,
+        "leagueName": "Premier League",
+        "awayStar": 4,
+        "homeBattleFormation": [
+        {
+        "position": "(gk)",
+        "importance": "无",
+        "name": "Maarten Stekelenburg",
+        "playerid": 6072
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Seamus Coleman",
+        "playerid": 23804
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Ramiro Funes Mori",
+        "playerid": 63237
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Ashley Williams",
+        "playerid": 320
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Leighton Baines",
+        "playerid": 9013
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Idrissa Gueye",
+        "playerid": 40566
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "James McCarthy",
+        "playerid": 2198
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Gareth Barry",
+        "playerid": 6326
+        },
+        {
+        "position": "(att)",
+        "importance": "无",
+        "name": "Enner Valencia",
+        "playerid": 58574
+        },
+        {
+        "position": "(att)",
+        "importance": "无",
+        "name": "Romelu Lukaku",
+        "playerid": 39195
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Aaron Lennon",
+        "playerid": 8789
+        }
+        ],
+        "homepossibleinjury": null,
+        "awayAtAwayLatest5": "12X11",
+        "homeStar": 4,
+        "homesuspended": "Phil Jagielka,Yannick Bolasie,Muhamed Besic",
+        "awaypossibleinjury": "Daniel Sturridge,Divock Origi",
+        "homeSummary": "<p><strong>Snapped out of a winless streak by beating Arsenal 2-1....Have failed to beat Liverpool in 12 previous attempts....Yannick Bolasie(r)(mid), Muhamed Besic(sp)(mid) out injured....Phil Jagielka(r)(def) suspended....</strong>Everton put up a solid display in the midweek as they snapped out of a five-match winless streak with a hard fought 2-1 win over Arsenal. A poor run of just one win in their last 11 games had increased the pressure on Ronald Koeman but the Everton coach will be pleased with what he saw on the field in their last match as his side proved to be more than a match to Arsenal and fought back from a goal down to seal a deserved victory thanks to goals from Seamus Coleman and Ashley Williams. The win provides fresh boost to Everton's hopes of challenging for a Europa League spot but Koeman will be aware that his side will have to build on the performance and go on a good run if they are to be considered serious challengers for a place in the top six. They face another difficult game in their next match when they welcome arch rivals Liverpool on Monday. Everton have a poor record in the Merseyside derby and head into the match on the back of a poor run which has seen them fail to win in the last 12 meetings between the two sides, though they have lost just once in the last six games at Goodison Park. Yannick Bolasie and Muhamed Besic remain out injured for Everton who will also be without Phil Jagielka, after the defender was sent off deep in injury time against Arsenal.</p>",
+        "awayinjury": "Philippe Coutinho,Marko Grujic,Danny Ings",
+        "awayBattleFormation": [
+        {
+        "position": "(gk)",
+        "importance": "无",
+        "name": "Simon Mignolet",
+        "playerid": 26839
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Nathaniel Clyne",
+        "playerid": 35550
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Ragnar Klavan",
+        "playerid": 7708
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Dejan Lovren",
+        "playerid": 12995
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "James Milner",
+        "playerid": 8650
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Adam Lallana",
+        "playerid": 29468
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Jordan Henderson",
+        "playerid": 35653
+        },
+        {
+        "position": "(mid)",
+        "importance": "无",
+        "name": "Georginio Wijnaldum",
+        "playerid": 23074
+        },
+        {
+        "position": "(att)",
+        "importance": "无",
+        "name": "Sadio Mane",
+        "playerid": 47928
+        },
+        {
+        "position": "(att)",
+        "importance": "无",
+        "name": "Divock Origi",
+        "playerid": 52386
+        },
+        {
+        "position": "(att)",
+        "importance": "无",
+        "name": "Roberto Firmino",
+        "playerid": 44074
+        },
+        {
+        "position": "(def)",
+        "importance": "无",
+        "name": "Joel Matip",
+        "playerid": 40140
+        }
+        ],
+        "homeAtHomeLatest5": "1XX1X",
+        "matchDate": "2016-12-20 12:00:00",
+        "homeFormation": "",
+        "matchId": 113182,
+        "awayName": "Liverpool",
+        "homeinjury": null,
+        "weather": 7,
+        "homeName": "Everton",
+        "homeLatest5": "12X2X",
+        "awaySummary": "<p style=\"text-align: justify;\"><strong>Climbed back in second place with convincing 3:0 away win vs. Middlesbrough and will enter the local derby full of confidence &hellip; Can&rsquo;t afford mistakes as gap to the top is already six points &hellip; Ings (sp) (att) and Coutinho (k) (mid) sidelined &hellip; Sturridge (sp) (att), Grujic (sp) (mid), Matip (r) (def) and Can (sp) (mid) doubtful<span style=\"color: #0000ff;\">. Can and Matip passed fit, but Grujic ruled out</span> &hellip; Origi (sp) (att) slight concern ... </strong>Liverpool returned to winning ways on Wednesday night when star performance from Lallana, he scored two goals and added an assist to that, saw the Reds cruising to an easy 3:0 away win vs. Middlesbrough and as a result of that they reclaimed second place on goal difference. Klopp was happy not just with the usual strong display in the final third but also with his team&rsquo;s defensive stability and after being restored between the posts and keeping a clean sheet now Mignolet is almost certain to start again. He has previous experience in this fierce local derby too and Liverpool must seek another win on Monday night if they are to remain with realistic chances to catch Chelsea. In recent weeks the young striker Origi grabbed his chance, he became a regular starter once Coutinho got hurt, and with goals in five consecutive games in all competition the Belgian is taking the league by storm at the minute. He picked up a knock on Wednesday, but it is 99% certain that he will recover on time for this one. All of Sturridge, Grujic, Matip and Can also battle hard to return to full fitness soon and at least the last two have good chances to achieve that on time for the Merseyside derby.&nbsp;<span style=\"color: #0000ff;\">Matip and Can are cleared to play, with Sturridge also hopeful to make the bench, but Grujic will miss again.</span> Ings and Coutinho are long-term absentees and they won&rsquo;t feature.<strong><br /></strong></p>",
+        "awayLatest5": "1X21X",
+        "awayFormation": ""
+        }
+
+
+
+## SINA Ying - 中文球员 [/player_cn]
+
+中文球员信息
+
+    
+### player_cn [GET]
 + Response 200 (application/json)
 
         {
-          "matchID":1139
-           }
-           
+        
+        }
+
+
+
+
+## SINA Ying - 英文球员 [/player_en?playerId={playerId}]
+
+英文球员信息
+
++ Parameters
+    + playerId: `47928` (number) - match id
+    
+### player_en [GET]
++ Response 200 (application/json)
+
+        {
+        "position": "(att)",
+        "fiveGames": [
+        {
+        "homeName": "Liverpool",
+        "awayName": "West Ham United",
+        "score": "2:2",
+        "bunko": "平",
+        "expression": "5"
+        },
+        {
+        "homeName": "Bournemouth",
+        "awayName": "Liverpool",
+        "score": "4:3",
+        "bunko": "主胜",
+        "expression": "4-5-6"
+        },
+        {
+        "homeName": "Liverpool",
+        "awayName": "Sunderland",
+        "score": "2:0",
+        "bunko": "主胜",
+        "expression": "5"
+        },
+        {
+        "homeName": "Liverpool",
+        "awayName": "Watford",
+        "score": "0:0",
+        "bunko": "平",
+        "expression": "4-5-6"
+        },
+        {
+        "homeName": "Liverpool",
+        "awayName": "Leeds United",
+        "score": "2:0",
+        "bunko": "主胜",
+        "expression": "5"
+        },
+        {
+        "homeName": "Middlesbrough",
+        "awayName": "Liverpool",
+        "score": "0:3",
+        "bunko": "主负",
+        "expression": "5"
+        },
+        {
+        "homeName": "Southampton",
+        "awayName": "Liverpool",
+        "score": "0:0",
+        "bunko": "平",
+        "expression": "4-5"
+        }
+        ],
+        "playerImg": null,
+        "firstNum": 16,
+        "playerName": "Sadio Mane",
+        "playerid": 47928,
+        "team": "Liverpool",
+        "yellNum": 2,
+        "goalNum": 7,
+        "redNum": 0,
+        "nationality": "French",
+        "importance": "无",
+        "matchNum": 16
+        }
+
+
+
+
+
+
+## SINA Ying - 中文赛事 [/matches_cn?matchId={matchId}]
+
+中文赛事信息
+
++ Parameters
+    + matchId: `113182` (number) - match id
+
+### matches_cn [GET]
++ Response 200 (application/json)
+
+        {
+        "homeScoreNo": 23,
+        "awayName": "Liverpool",
+        "awayFumbleNo": 20,
+        "homeName": "Everton",
+        "homeFumbleAverage": 1,
+        "keyEvents": [],
+        "homeFumbleNo": 20,
+        "awayGoalAverage": 2,
+        "homeGoalAverage": 1,
+        "awayScoreNo": 34,
+        "awayFumbleAverage": 1
+        }
+
+
+
+## SINA Ying - 英文赛事 [/matches_en]
+
+英文赛事信息
+
+### matches_en [GET]
++ Response 200 (application/json)
+
+        {
+        
+        }
+
+
+
+
+
+## SINA Ying - 中文赛事 ID [/queryMatchID?uniqueid={uniqueID}]
+
+获取中文赛事 ID
+
++ Parameters
+    + uniqueID: `201612191007` (number) - caiex unique id
+
+### queryMatchID [GET]
++ Response 200 (application/json)
+
+        {
+        "matchID": 1284
+        }
+
+
+
+
+## SINA Ying - 英文赛事 ID [/querySIMatchID?uniqueid={uniqueID}]
+
+获取英文赛事 ID
+
++ Parameters
+    + uniqueID: `201612191007` (number) - caiex unique id
+
+
+### querySIMatchID [GET]
++ Response 200 (application/json)
+
+        {
+        "caiex_matchnews_id": 113182
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
            
 ## Game - MatchInfo [/tabList/getMatchInfo.shtml?dateVal={dateVal}&payout_type={payout_type}&player_id={player_id}]
   赛事列表
@@ -563,7 +778,7 @@ SI资讯的数据接口-微信版
         
         
         
-## SI news - ionic echart.js plotting [/agInfoMation/getAllPriHistory.shtml?game_id={game_id}&opt={opt}&player_id={player_id}]
+## Game - ionic echart.js plotting [/agInfoMation/getAllPriHistory.shtml?game_id={game_id}&opt={opt}&player_id={player_id}]
 
    资讯页面内显示6条曲线
   
