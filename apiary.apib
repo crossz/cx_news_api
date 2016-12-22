@@ -10,6 +10,33 @@ SI资讯的数据接口-微信版
 ## SINA Ying - 中文资讯 [/matchInfo_cn?matchId={matchId}]
 
 中文内容 - 中英文的 Id 通过另外一个接口获取
+请求参数：
+- matchId
+返回字段：
+- leagueName：联赛名称
+- weather：天气（显示温度）
+- homeName：主队名称
+- homeStar：主队星级
+- homeSummary：主队赛事信息
+- homeFormation：主队阵型（eg: 4-3-2-1）
+- homeBattleFormation：主队阵容
+- homeinjury：主队伤停
+- homesuspended：主队停赛
+- homepossibleinjury：主队疑似伤停
+- homeLatest5：主队近5场战绩
+- homeAtHomeLatest5：主队的近5场主场战绩
+- homeawayLatest5：主队的近5场客场战绩
+- awayName：客队名称
+- awayStar：客队星级
+- awaySummary：客队赛事信息
+- awayFormation：客队阵型
+- awayBattleFormation：客队阵容
+- awayinjury：客队伤停
+- awaysuspended：客队停赛
+- awaypossibleinjury：客队疑似伤停
+- awayLatest5：客队近5场战绩
+- awayawayLatest5：客队的近5场客场战绩
+- awayhomeLatest5：客队的近5场主场战绩
 
 + Parameters
     + matchId: `1284` (number) - cn match id
@@ -249,6 +276,31 @@ SI资讯的数据接口-微信版
 
 英文球员信息
 
+请求参数:
+- playerId
+
+返回字段:
+- position: 球员位置
+- fiveGames: 近5场比赛表现（以数组形式体现）
+- homeName: 主队名称
+- awayName: 客队名称
+- score: 比分
+- bunko: 赛果
+- expression: 红黄牌等信息（1-黄牌，2-红牌，3-换上，4-换下，5-首发，6-进球，7-乌龙球）
+- playerImg: 球员图片
+- firstNum: 首发场次
+- playerName: 球员姓名
+- playerid: 球员id
+- team: 球队
+- yellNum: 黄牌次数
+- goalNum: 进球次数
+- redNum: 红牌次数
+- nationality: 球员国籍
+- importance: 球员重要性(球员id评级)
+- matchNum: 比赛次数
+
+
+
 + Parameters
     + playerId: `47928` (number) - match id
     
@@ -330,6 +382,20 @@ SI资讯的数据接口-微信版
 
 中文赛事信息
 
+请求参数：
+- match id
+
+返回字段：
+- homeScoreNo：主队总进球数
+- homeFumbleNo：主队失球数
+- homeGoalAverage：主队平均进球数
+- homeFumbleAverage：主队平均失球数
+- awayScoreNo：客队总进球数
+- awayFumbleNo：客队失球数
+- awayGoalAverage：客队平均进球数
+- awayFumbleAverage：客队平均失球数
+
+
 + Parameters
     + matchId: `113182` (number) - match id
 
@@ -397,494 +463,4 @@ SI资讯的数据接口-微信版
 
         {
         "caiex_matchnews_id": 113182
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-## Game - MatchInfo [/tabList/getMatchInfo.shtml?dateVal={dateVal}&payout_type={payout_type}&player_id={player_id}]
-  赛事列表
-  
-+ Parameters
-    + dateVal: `2016-11-11` (timestamp) - picked date 
-    + payout_type: `2` (number) - game type 1 or 2
-    + player_id: `46` (number) - wechat id
-  
-### getMatchInfo for the default list [GET]
-+ Response 200 (application/json)
-
-        {
-            "data":{
-                "gameList":[
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":1,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":3,
-                        "countGame":null,
-                        "create_time":"2016-11-15 10:35:30",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 18:35:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":0,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242536,
-                        "game_start_time":"2016-11-15 18:35:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1635,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152001",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"0-0",
-                        "match_state":1,
-                        "match_teams":"\u65E5\u672C vs \u6C99\u7279",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":3000,
-                        "w500":null
-                    },
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":1,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":3,
-                        "countGame":null,
-                        "create_time":"2016-11-15 11:00:30",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 19:00:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":0,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242537,
-                        "game_start_time":"2016-11-15 19:00:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1639,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152002",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"0-0",
-                        "match_state":1,
-                        "match_teams":"\u97E9\u56FD vs \u4E4C\u5179\u522B\u514B\u65AF\u5766",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":4000,
-                        "w500":null
-                    },
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":3,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":4,
-                        "countGame":null,
-                        "create_time":"2016-11-15 10:39:10",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 19:35:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":1,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242538,
-                        "game_start_time":"2016-11-15 19:35:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1647,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152003",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"-",
-                        "match_state":0,
-                        "match_teams":"\u4E2D\u56FD vs \u5361\u5854\u5C14",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":6000,
-                        "w500":null
-                    },
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":2,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":2,
-                        "countGame":null,
-                        "create_time":"2016-11-15 10:39:30",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 20:00:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":1,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242539,
-                        "game_start_time":"2016-11-15 20:00:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1651,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152004",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"-",
-                        "match_state":0,
-                        "match_teams":"\u53D9\u5229\u4E9A vs \u4F0A\u6717",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":3000,
-                        "w500":null
-                    },
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":1,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":2,
-                        "countGame":null,
-                        "create_time":"2016-11-15 10:42:19",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 20:00:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":1,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242541,
-                        "game_start_time":"2016-11-15 20:00:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1665,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152005",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"-",
-                        "match_state":0,
-                        "match_teams":"\u6CF0\u56FD  vs  \u6FB3\u5927\u5229\u4E9A",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":2000,
-                        "w500":null
-                    },
-                    {
-                        "auto_payout":1,
-                        "auto_sync":1,
-                        "awayUrl":null,
-                        "bonus":0,
-                        "championJoinState":1,
-                        "champion_game_bonus":null,
-                        "champion_game_state":1,
-                        "champion_payout_state":0,
-                        "champion_player_now":3,
-                        "countGame":null,
-                        "create_time":"2016-11-15 10:40:55",
-                        "create_user":null,
-                        "create_user_name":null,
-                        "date":null,
-                        "end_sign_time":"2016-11-15 23:20:00",
-                        "freeJoinState":0,
-                        "free_game_bonus":null,
-                        "free_game_state":1,
-                        "free_payout_state":0,
-                        "free_player_now":0,
-                        "game_id":201605242542,
-                        "game_start_time":"2016-11-15 23:20:00",
-                        "game_type":null,
-                        "gpFree_id":null,
-                        "gpGame_id":1638,
-                        "hadTcl":null,
-                        "half_score":"-",
-                        "hhadTcl":null,
-                        "homeUrl":null,
-                        "isclick":false,
-                        "isclickFree":false,
-                        "isclickGame":false,
-                        "keyEvents":null,
-                        "match_code":"201611152006",
-                        "match_league":"\u4E9A\u6D32\u9884\u9009",
-                        "match_league_id":null,
-                        "match_score":"-",
-                        "match_state":0,
-                        "match_teams":"\u963F\u8054\u914B vs \u4F0A\u62C9\u514B",
-                        "match_time":null,
-                        "num":null,
-                        "player_limit":null,
-                        "price_limit":null,
-                        "res":null,
-                        "reward_percent":"50,30,10",
-                        "sign_cost":1000,
-                        "sport_type":1,
-                        "sum_jackpot":3000,
-                        "w500":null
-                    }
-                ]
-            },
-            "result":{
-                "resultCode":1,
-                "resultMsg":null
-            }
-        }
-
-## Game - Angular.js userService [/fallsList/getMatchUser.shtml?player_id={player_id}]
-   游戏 获取用户信息
-  
-+ Parameters
-    + player_id: `46` (number) - wechat id
-  
-### getMatchUser [GET]
-+ Response 200 (application/json)
-
-        {
-            "data":{
-                "birthday":"1996-06-21 09:53:49",
-                "city":"",
-                "headPicUrl":"http://www.caiex.com/img/logo.png",
-                "money":100000.00,
-                "phone":null,
-                "player_id":46,
-                "player_nickname":"\u9F99\u654F",
-                "sex":2,
-                "union_id":"oa7AjwoZHDzTU5poRpp778R1Qz-U",
-                "update_time":"2016-11-09 07:23:29"
-            },
-            "result":{
-                "resultCode":0,
-                "resultMsg":null
-            }
-        }
-        
-        
-        
-## Game - ionic echart.js plotting [/agInfoMation/getAllPriHistory.shtml?game_id={game_id}&opt={opt}&player_id={player_id}]
-
-   资讯页面内显示6条曲线
-  
-+ Parameters
-    + player_id: `45` (number) - wechat id
-    + game_id: `201605242627` (number) - game id
-    + opt: `H` (string) - betting option
-  
-### getAllPriHistory [GET]
-+ Response 200 (application/json)
-
-        {
-            "data":[
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45",
-                "797.45"
-            ],
-            "result":{
-                "resultCode":1,
-                "resultMsg":null
-            }
         }
