@@ -19,11 +19,11 @@ SI资讯的数据接口-微信版
 - homeStar：主队星级
 - homeSummary：主队赛事信息
 - homeFormation：主队阵型（eg: 4-3-2-1）
-- homeBattleFormation：主队阵容
-- homeinjury：主队伤停
+- homeBattleFormation：主队阵容容(包括：球员位置、球员重要性、球员姓名、球员id)
+- homeinjury：主队伤停（显示球员姓名，以逗号隔开）
 - homesuspended：主队停赛
 - homepossibleinjury：主队疑似伤停
-- homeLatest5：主队近5场战绩
+- homeLatest5：主队近5场战绩（1胜，x平，2负）
 - homeAtHomeLatest5：主队的近5场主场战绩
 - homeawayLatest5：主队的近5场客场战绩
 - awayName：客队名称
@@ -280,13 +280,13 @@ SI资讯的数据接口-微信版
 - playerId
 
 返回字段:
-- position: 球员位置
-- fiveGames: 近5场比赛表现（以数组形式体现）
+- position: 球员位置(包括：def (后卫)、att(前锋)、mid(中场)、gk(门将))
+- fiveGames: 近5场比赛表现（以数组形式列出）
 - homeName: 主队名称
 - awayName: 客队名称
-- score: 比分
-- bunko: 赛果
-- expression: 红黄牌等信息（1-黄牌，2-红牌，3-换上，4-换下，5-首发，6-进球，7-乌龙球）
+- score: 比分（主队分数：客队分数）
+- bunko: 赛果（包括：win(胜)、draw(平)、lose(负)  以上赛果均以主队为标准）
+- expression: 红黄牌等信息（1-黄牌，2-红牌，3-换上，4-换下，5-首发，6-进球，7-乌龙球  以上为可能出现的全部字段）
 - playerImg: 球员图片
 - firstNum: 首发场次
 - playerName: 球员姓名
@@ -314,49 +314,49 @@ SI资讯的数据接口-微信版
         "homeName": "Liverpool",
         "awayName": "West Ham United",
         "score": "2:2",
-        "bunko": "平",
+        "bunko": "draw",
         "expression": "5"
         },
         {
         "homeName": "Bournemouth",
         "awayName": "Liverpool",
         "score": "4:3",
-        "bunko": "主胜",
+        "bunko": "win",
         "expression": "4-5-6"
         },
         {
         "homeName": "Liverpool",
         "awayName": "Sunderland",
         "score": "2:0",
-        "bunko": "主胜",
+        "bunko": "win",
         "expression": "5"
         },
         {
         "homeName": "Liverpool",
         "awayName": "Watford",
         "score": "0:0",
-        "bunko": "平",
+        "bunko": "draw",
         "expression": "4-5-6"
         },
         {
         "homeName": "Liverpool",
         "awayName": "Leeds United",
         "score": "2:0",
-        "bunko": "主胜",
+        "bunko": "win",
         "expression": "5"
         },
         {
         "homeName": "Middlesbrough",
         "awayName": "Liverpool",
         "score": "0:3",
-        "bunko": "主负",
+        "bunko": "lose",
         "expression": "5"
         },
         {
         "homeName": "Southampton",
         "awayName": "Liverpool",
         "score": "0:0",
-        "bunko": "平",
+        "bunko": "draw",
         "expression": "4-5"
         }
         ],
@@ -378,9 +378,22 @@ SI资讯的数据接口-微信版
 
 
 
-## SINA Ying - 中文赛事 [/matches_cn?matchId={matchId}]
+## SINA Ying - 中文赛事 [/matches_cn]
 
 中文赛事信息
+
+### matches_cn [GET]
++ Response 200 (application/json)
+
+        {
+        
+        }
+
+
+
+## SINA Ying - 英文赛事 [/matches_en?matchId={matchId}]
+
+英文赛事信息
 
 请求参数：
 - match id
@@ -394,12 +407,16 @@ SI资讯的数据接口-微信版
 - awayFumbleNo：客队失球数
 - awayGoalAverage：客队平均进球数
 - awayFumbleAverage：客队平均失球数
-
-
+- keyEvents：关键事件（主客队的进球和红黄牌情况）
+- minute：发生关键事件的时间
+- eventDesc：红黄牌或进球
+- team：1-主队、2-客队
+- playerid：该事件的发生者的id
+- eventType：事件类型（1-进球，2-点球，5-黄牌，6-红牌，7-两黄牌）
 + Parameters
     + matchId: `113182` (number) - match id
 
-### matches_cn [GET]
+### matches_en [GET]
 + Response 200 (application/json)
 
         {
@@ -408,25 +425,34 @@ SI资讯的数据接口-微信版
         "awayFumbleNo": 20,
         "homeName": "Everton",
         "homeFumbleAverage": 1,
-        "keyEvents": [],
+        "keyEvents": [
+            {
+            "team":1,
+            "eventType":1,
+            "eventDesc":"进球",
+            "minute":"20"
+            "playerid":46124
+            },
+            {
+            "team":1,
+            "eventType":2,
+            "eventDesc":"点球",
+            "minute":"55"
+            "playerid":21065
+            },
+            {
+            "team":1,
+            "eventType":5,
+            "eventDesc":"黄牌",
+            "minute":60,
+            "playerid":40832
+            }
+        ],
         "homeFumbleNo": 20,
         "awayGoalAverage": 2,
         "homeGoalAverage": 1,
         "awayScoreNo": 34,
         "awayFumbleAverage": 1
-        }
-
-
-
-## SINA Ying - 英文赛事 [/matches_en]
-
-英文赛事信息
-
-### matches_en [GET]
-+ Response 200 (application/json)
-
-        {
-        
         }
 
 
@@ -463,4 +489,45 @@ SI资讯的数据接口-微信版
 
         {
         "caiex_matchnews_id": 113182
+        }
+        
+    
+## SINA Ying - 英文赛事列表 [/siMatchList?startTimeStamp={startTimeStamp}&endTimeStamp={endTimeStamp}]
+
+用时间获取赛事列表
+
++ Parameters
+    + startTimeStamp
+    + endTimeStamp
+
+### siMatchesList [GET]
++ Response 200 (application/json)
+
+        {
+        "kickoffTimeStamp": "1483225000",
+        "league": "EPL",
+        "home": "Liverpool",
+        "away": "Stoke",
+        "siMatchId":"113759"
+        }
+        
+        
+        
+## SINA Ying - 中文赛事列表 [/caiexMatchList?startTimeStamp={startTimeStamp}&endTimeStamp={endTimeStamp}]
+
+用时间获取赛事列表
+
++ Parameters
+    + startTimeStamp
+    + endTimeStamp
+
+### caiexMatchesList [GET]
++ Response 200 (application/json)
+
+        {
+        "kickoffTimeStamp": "1483225000",
+        "league": "英超",
+        "home": "利物浦",
+        "away": "斯托克城",
+        "uniqueId":"201612272006"
         }
