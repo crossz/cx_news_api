@@ -25,7 +25,7 @@ SI资讯的数据接口-微信版
 - homeSummary：主队赛事信息
 - homeFormation：主队阵型（eg: 4-3-2-1）
 - homeBattleFormation：主队首发阵容容（包括：球员位置、球员重要性、球员姓名、球员id）
-- homeBenchBattleFormation：主队替补阵容容（包括：球员位置、球员重要性、球员姓名、球员id）
+- homeBenchBattleFormation：主队替补阵容（包括：球员位置、球员重要性、球员姓名、球员id）
 - homeinjury：主队伤停（显示球员姓名，以逗号隔开）
 - homesuspended：主队停赛
 - homepossibleinjury：主队疑似伤停
@@ -49,312 +49,321 @@ SI资讯的数据接口-微信版
 - name: 球员中文姓名
 - playerid：caiex的球员id
 
-+ Parameters
-    + caiexMatchId: `1284` (number) - cn match id
+### matchInfo_cn [POST]
 
-### matchInfo_cn [GET]
-
-+ Response 200 (application/json)
++ Request (application/json)
 
         {
-        "leagueName": "英格兰超级联赛",
-        "homeBattleFormation": [
-        {
-        "position": "门将",
-        "importance": "核心",
-        "name": "斯特克伦博格",
-        "playerid": 1688
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "塞维斯·科尔曼",
-        "playerid": 1652
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "莫里",
-        "playerid": 1681
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "威廉姆斯",
-        "playerid": 1682
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "莱顿·巴恩斯",
-        "playerid": 1656
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "伊德里萨·盖伊",
-        "playerid": 1670
-        },
-        {
-        "position": "中场",
-        "importance": null,
-        "name": "麦卡锡",
-        "playerid": 1693
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "加雷斯·巴里",
-        "playerid": 1676
-        },
-        {
-        "position": "前锋",
-        "importance": "核心",
-        "name": "瓦伦西亚",
-        "playerid": 1684
-        },
-        {
-        "position": "前锋",
-        "importance": "主力",
-        "name": "卢卡库",
-        "playerid": 1685
-        },
-        "homeBenchBattleFormation": [
-        {
-        "position": "门将",
-        "importance": null,
-        "name": "赫威尔",
-        "playerid": 1687
-        },
-        {
-        "position": "门将",
-        "importance": "替补",
-        "name": "若埃尔·罗伯斯",
-        "playerid": 1608
-        },
-        {
-        "position": "后卫",
-        "importance": null,
-        "name": "梅森·霍尔盖特",
-        "playerid": 1664
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "德乌罗费乌",
-        "playerid": 1668
-        },
-        {
-        "position": "中场",
-        "importance": null,
-        "name": "汤姆·戴维斯",
-        "playerid": 1612
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "吉布森",
-        "playerid": 1658
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "罗斯·巴克利",
-        "playerid": 1669
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "汤姆·克莱弗利",
-        "playerid": 1672
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "米拉拉斯",
-        "playerid": 1691
-        },
-        {
-        "position": "前锋",
-        "importance": "替补",
-        "name": "D.卡尔沃特勒温",
-        "playerid": 1667
-        },
-        {
-        "position": "前锋",
-        "importance": "替补",
-        "name": "阿鲁纳·科内",
-        "playerid": 1679
+            "caiexMatchId": "`1284` (number) - cn match "
         }
-        ],
-        "homeStar": 4,
-        "homesuspended": "菲尔·贾吉尔卡,亚尼克·博拉西耶,穆罕默德·贝希奇",
-        "awaypossibleinjury": "马蒂普,格鲁伊奇,埃姆雷·坎,丹尼尔·斯图里奇,奥利吉",
-        "awayBattleFormation": [
-        {
-        "position": "门将",
-        "importance": null,
-        "name": "米尼奥莱",
-        "playerid": 1719
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "克莱因",
-        "playerid": 1721
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "克拉万",
-        "playerid": 1738
-        },
-        {
-        "position": "后卫",
-        "importance": null,
-        "name": "洛夫伦",
-        "playerid": 1722
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "米尔纳",
-        "playerid": 1745
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "拉拉纳",
-        "playerid": 1752
-        },
-        {
-        "position": "中场",
-        "importance": "主力",
-        "name": "亨德森",
-        "playerid": 1750
-        },
-        {
-        "position": "中场",
-        "importance": "核心",
-        "name": "维纳尔杜姆",
-        "playerid": 1742
-        },
-        {
-        "position": "前锋",
-        "importance": null,
-        "name": "马内",
-        "playerid": 1763
-        },
-        {
-        "position": "前锋",
-        "importance": "主力",
-        "name": "奥利吉",
-        "playerid": 1764
-        },
-        {
-        "position": "前锋",
-        "importance": null,
-        "name": "菲尔米诺",
-        "playerid": 1760
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "J.马蒂普",
-        "playerid": 1638
-        },
-        "awayBenchBattleFormation": [
-        {
-        "position": "门将",
-        "importance": "主力",
-        "name": "卡里乌斯",
-        "playerid": 1628
-        },
-        {
-        "position": "后卫",
-        "importance": "替补",
-        "name": "阿尔伯托.莫雷诺",
-        "playerid": 1636
-        },
-        {
-        "position": "后卫",
-        "importance": "主力",
-        "name": "J.马蒂普",
-        "playerid": 1638
-        },
-        {
-        "position": "后卫",
-        "importance": null,
-        "name": "特伦.阿诺德",
-        "playerid": 1631
-        },
-        {
-        "position": "中场",
-        "importance": null,
-        "name": "奥维.埃亚里亚",
-        "playerid": 1633
-        },
-        {
-        "position": "中场",
-        "importance": null,
-        "name": "B.伍德布鲁恩",
-        "playerid": 1642
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "卢卡斯",
-        "playerid": 1651
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "凯文.斯图尔特",
-        "playerid": 1698
-        },
-        {
-        "position": "后卫",
-        "importance": "替补",
-        "name": "克拉万",
-        "playerid": 1738
-        },
-        {
-        "position": "中场",
-        "importance": "替补",
-        "name": "埃姆雷·詹",
-        "playerid": 1753
-        },
-        {
-        "position": "前锋",
-        "importance": "替补",
-        "name": "斯图里奇",
-        "playerid": 1762
-        }
-        ],
-        "weather": 7,
-        "awayhomeLatest5": "1X21X",
-        "homeLatest5": "12X2X",
-        "homeawayLatest5": "12X2X",
-        "awaySummary": "<p>利物浦在周三晚上重新回到了胜利的轨道上，拉拉纳两球一助攻的巨星表现让红军在与米德尔斯堡的比赛中以3:0轻取胜利，他们以进球数之差重回第二名的位置。克洛普并不只是因为过去三轮不同寻常的强大表现而高兴，同时值得他高兴的还有球队稳定的防守，米尼奥莱替补一段时间后并且保持了不丢球记录后，几乎可以确定将要再次首发赛场了，他对于激烈的默西塞德郡德比有经验，利物浦如果想要保持追赶切尔西的可能性，那他们必须赢下周一晚上的比赛。在最近的几周中，年轻的前锋奥利吉抓住了好机会，在库蒂尼奥受伤后他成为了常规的首发球员，在各项赛事连续五场比赛中都取得了进球的这名比利时前锋重新在联赛中找回了状态。在周三的比赛中他遭受了撞击，但是几乎可以99%确定他会在这场比赛前及时恢复过来。斯图里奇，詹，格鲁伊奇都在尽力恢复100%的健康状态，至少詹和格鲁伊奇都有很大的希望在默西塞德德比前恢复过来。马蒂普和詹都可以上场比赛，斯图里奇很有可能继续坐板凳，格鲁伊奇将会再次错过比赛。因斯和库蒂尼奥是长期伤员，他们不会出场。</p>\n",
-        "awayLatest5": "1X21X",
-        "awaysuspended": null,
-        "awayawayLatest5": "1X21X",
-        "awayStar": 4,
-        "homepossibleinjury": null,
-        "awayAtAwayLatest5": "12X11",
-        "homeSummary": "<p>上周中埃弗顿展现了坚固的防守表现，在周中的比赛中以2-1战胜了阿森纳，结束了五场比赛不胜的尴尬局面，过去11场比赛中只胜一轮的糟糕表现让主教练罗纳德科曼身上的压力更重了，但是他对于埃弗顿上场比赛的表现感到很满意，因为他的球队表现得比阿森纳更好，并且拜威廉姆斯和科尔曼的两粒进球所赐，埃弗顿抵抗住了对方的一粒进球，他们值得这场胜利。这场胜利也给埃弗顿冲击欧冠席位的希望带来了新的鼓舞，但是科曼意识到他的球队必须表现得更好，这样他们才会被正式视作前六名席位的挑战者。在下周他们将要面临另一场艰难的比赛，他们周一将在主场迎战头号劲敌利物浦。埃弗顿在过去的默西塞德德比中有着糟糕的记录，尽管他们在古迪逊公园的过去6场比赛中仅仅输了1次，但是在双方过去的12场交手中埃弗顿都保持不胜。博拉西和贝西奇仍旧因伤缺战，防守球员贾吉尔卡在与阿森纳的比赛中受重伤也无法为埃弗顿出战。</p>\n",
-        "awayinjury": "菲利佩·库蒂尼奥,丹尼·爱格斯",
-        "homeFormation": "4-2-3-1",
-        "homeAtHomeLatest5": "1XX1X",
-        "matchDate": "2016-12-20 04:00:00",
-        "awayName": "利物浦",
-        "caiexMatchId": 1284,
-        "homeinjury": null,
-        "homeName": "埃弗顿",
-        "homehomeLatest5": "12X2X",
-        "awayFormation": "4-4-2",
-        "siMatchId": 113182
-        }
+
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+    
+            {
+            "leagueName": "英格兰超级联赛",
+            "homeBattleFormation": [
+            {
+            "position": "门将",
+            "importance": "核心",
+            "name": "斯特克伦博格",
+            "playerid": 1688
+            },
+            {    
+            "position": "后卫",
+            "importance": "主力",
+            "name": "塞维斯·科尔曼",
+            "playerid": 1652
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "莫里",
+            "playerid": 1681
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "威廉姆斯",
+            "playerid": 1682
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "莱顿·巴恩斯",
+            "playerid": 1656
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "伊德里萨·盖伊",
+            "playerid": 1670
+            },
+            {
+            "position": "中场",
+            "importance": null,
+            "name": "麦卡锡",
+            "playerid": 1693
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "加雷斯·巴里",
+            "playerid": 1676
+            },
+            {
+            "position": "前锋",
+            "importance": "核心",
+            "name": "瓦伦西亚",
+            "playerid": 1684
+            },
+            {
+            "position": "前锋",
+            "importance": "主力",
+            "name": "卢卡库",
+            "playerid": 1685
+            },
+            "homeBenchBattleFormation": [
+            {
+            "position": "门将",
+            "importance": null,
+            "name": "赫威尔",
+            "playerid": 1687
+            },
+            {
+            "position": "门将",
+            "importance": "替补",
+            "name": "若埃尔·罗伯斯",
+            "playerid": 1608
+            },
+            {
+            "position": "后卫",
+            "importance": null,
+            "name": "梅森·霍尔盖特",
+            "playerid": 1664
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "德乌罗费乌",
+            "playerid": 1668
+            },
+            {
+            "position": "中场",
+            "importance": null,
+            "name": "汤姆·戴维斯",
+            "playerid": 1612
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "吉布森",
+            "playerid": 1658
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "罗斯·巴克利",
+            "playerid": 1669
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "汤姆·克莱弗利",
+            "playerid": 1672
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "米拉拉斯",
+            "playerid": 1691
+            },
+            {
+            "position": "前锋",
+            "importance": "替补",
+            "name": "D.卡尔沃特勒温",
+            "playerid": 1667
+            },
+            {
+            "position": "前锋",
+            "importance": "替补",
+            "name": "阿鲁纳·科内",
+            "playerid": 1679
+            }
+            ],
+            "homeStar": 4,
+            "homesuspended": "菲尔·贾吉尔卡,亚尼克·博拉西耶,穆罕默德·贝希奇",
+            "awaypossibleinjury": "马蒂普,格鲁伊奇,埃姆雷·坎,丹尼尔·斯图里奇,奥利吉",
+            "awayBattleFormation": [
+            {
+            "position": "门将",
+            "importance": null,
+            "name": "米尼奥莱",
+            "playerid": 1719
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "克莱因",
+            "playerid": 1721
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "克拉万",
+            "playerid": 1738
+            },
+            {
+            "position": "后卫",
+            "importance": null,
+            "name": "洛夫伦",
+            "playerid": 1722
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "米尔纳",
+            "playerid": 1745
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "拉拉纳",
+            "playerid": 1752
+            },
+            {
+            "position": "中场",
+            "importance": "主力",
+            "name": "亨德森",
+            "playerid": 1750
+            },
+            {
+            "position": "中场",
+            "importance": "核心",
+            "name": "维纳尔杜姆",
+            "playerid": 1742
+            },
+            {
+            "position": "前锋",
+            "importance": null,
+            "name": "马内",
+            "playerid": 1763
+            },
+            {
+            "position": "前锋",
+            "importance": "主力",
+            "name": "奥利吉",
+            "playerid": 1764
+            },
+            {
+            "position": "前锋",
+            "importance": null,
+            "name": "菲尔米诺",
+            "playerid": 1760
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "J.马蒂普",
+            "playerid": 1638
+            },
+            "awayBenchBattleFormation": [
+            {
+            "position": "门将",
+            "importance": "主力",
+            "name": "卡里乌斯",
+            "playerid": 1628
+            },
+            {
+            "position": "后卫",
+            "importance": "替补",
+            "name": "阿尔伯托.莫雷诺",
+            "playerid": 1636
+            },
+            {
+            "position": "后卫",
+            "importance": "主力",
+            "name": "J.马蒂普",
+            "playerid": 1638
+            },
+            {
+            "position": "后卫",
+            "importance": null,
+            "name": "特伦.阿诺德",
+            "playerid": 1631
+            },
+            {
+            "position": "中场",
+            "importance": null,
+            "name": "奥维.埃亚里亚",
+            "playerid": 1633
+            },
+            {
+            "position": "中场",
+            "importance": null,
+            "name": "B.伍德布鲁恩",
+            "playerid": 1642
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "卢卡斯",
+            "playerid": 1651
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "凯文.斯图尔特",
+            "playerid": 1698
+            },
+            {
+            "position": "后卫",
+            "importance": "替补",
+            "name": "克拉万",
+            "playerid": 1738
+            },
+            {
+            "position": "中场",
+            "importance": "替补",
+            "name": "埃姆雷·詹",
+            "playerid": 1753
+            },
+            {
+            "position": "前锋",
+            "importance": "替补",
+            "name": "斯图里奇",
+            "playerid": 1762
+            }
+            ],
+            "weather": 7,
+            "awayhomeLatest5": "1X21X",
+            "homeLatest5": "12X2X",
+            "homeawayLatest5": "12X2X",
+            "awaySummary": "<p>利物浦在周三晚上重新回到了胜利的轨道上，拉拉纳两球一助攻的巨星表现让红军在与米德尔斯堡的比赛中以3:0轻取胜利，他们以进球数之差重回第二名的位置。克洛普并不只是因为过去三轮不同寻常的强大表现而高兴，同时值得他高兴的还有球队稳定的防守，米尼奥莱替补一段时间后并且保持了不丢球记录后，几乎可以确定将要再次首发赛场了，他对于激烈的默西塞德郡德比有经验，利物浦如果想要保持追赶切尔西的可能性，那他们必须赢下周一晚上的比赛。在最近的几周中，年轻的前锋奥利吉抓住了好机会，在库蒂尼奥受伤后他成为了常规的首发球员，在各项赛事连续五场比赛中都取得了进球的这名比利时前锋重新在联赛中找回了状态。在周三的比赛中他遭受了撞击，但是几乎可以99%确定他会在这场比赛前及时恢复过来。斯图里奇，詹，格鲁伊奇都在尽力恢复100%的健康状态，至少詹和格鲁伊奇都有很大的希望在默西塞德德比前恢复过来。马蒂普和詹都可以上场比赛，斯图里奇很有可能继续坐板凳，格鲁伊奇将会再次错过比赛。因斯和库蒂尼奥是长期伤员，他们不会出场。</p>\n",
+            "awayLatest5": "1X21X",
+            "awaysuspended": null,
+            "awayawayLatest5": "1X21X",
+            "awayStar": 4,
+            "homepossibleinjury": null,
+            "awayAtAwayLatest5": "12X11",
+            "homeSummary": "<p>上周中埃弗顿展现了坚固的防守表现，在周中的比赛中以2-1战胜了阿森纳，结束了五场比赛不胜的尴尬局面，过去11场比赛中只胜一轮的糟糕表现让主教练罗纳德科曼身上的压力更重了，但是他对于埃弗顿上场比赛的表现感到很满意，因为他的球队表现得比阿森纳更好，并且拜威廉姆斯和科尔曼的两粒进球所赐，埃弗顿抵抗住了对方的一粒进球，他们值得这场胜利。这场胜利也给埃弗顿冲击欧冠席位的希望带来了新的鼓舞，但是科曼意识到他的球队必须表现得更好，这样他们才会被正式视作前六名席位的挑战者。在下周他们将要面临另一场艰难的比赛，他们周一将在主场迎战头号劲敌利物浦。埃弗顿在过去的默西塞德德比中有着糟糕的记录，尽管他们在古迪逊公园的过去6场比赛中仅仅输了1次，但是在双方过去的12场交手中埃弗顿都保持不胜。博拉西和贝西奇仍旧因伤缺战，防守球员贾吉尔卡在与阿森纳的比赛中受重伤也无法为埃弗顿出战。</p>\n",
+            "awayinjury": "菲利佩·库蒂尼奥,丹尼·爱格斯",
+            "homeFormation": "4-2-3-1",
+            "homeAtHomeLatest5": "1XX1X",
+            "matchDate": "2016-12-20 04:00:00",
+            "awayName": "利物浦",
+            "caiexMatchId": 1284,
+            "homeinjury": null,
+            "homeName": "埃弗顿",
+            "homehomeLatest5": "12X2X",
+            "awayFormation": "4-4-2",
+            "siMatchId": 113182
+            }
 
 
 
@@ -368,6 +377,7 @@ SI资讯的数据接口-微信版
 
 返回字段：
 - siMatchId: si 的matchid
+- caiexMatchId：caiex的matchid
 - leagueName：联赛名称
 - weather：天气（显示温度）
 - matchDate：比赛开始的时间（eg: 20 December 2016 04:00:00）
@@ -376,7 +386,7 @@ SI资讯的数据接口-微信版
 - homeSummary：主队赛事信息
 - homeFormation：主队阵型（eg: 4-3-2-1）
 - homeBattleFormation：主队首发阵容（包括：球员位置、球员重要性、球员姓名、球员id）
-- homeBenchBattleFormation：主队替补阵容容（包括：球员位置、球员重要性、球员姓名、球员id）
+- homeBenchBattleFormation：主队替补阵容（包括：球员位置、球员重要性、球员姓名、球员id）
 - homeinjury：主队伤停（显示球员姓名，以逗号隔开）
 - homesuspended：主队停赛
 - homepossibleinjury：主队疑似伤停
@@ -400,315 +410,325 @@ SI资讯的数据接口-微信版
 - name: 球员英文姓名
 - playerid：si的球员id
 
-+ Parameters
-    + siMatchId: `113182` (number) - game id
-   
 
-### matchInfo_en [GET]
 
-+ Response 200 (application/json)
+### matchInfo_en [POST]
+
++ Request (application/json)
 
         {
-        "awaysuspended": null,
-        "leagueName": "Premier League",
-        "awayStar": 4,
-        "homeBattleFormation": [
-        {
-        "position": "(gk)",
-        "importance": "(k)",
-        "name": "Maarten Stekelenburg",
-        "playerid": 6072
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Seamus Coleman",
-        "playerid": 23804
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Ramiro Funes Mori",
-        "playerid": 63237
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Ashley Williams",
-        "playerid": 320
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Leighton Baines",
-        "playerid": 9013
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Idrissa Gueye",
-        "playerid": 40566
-        },
-        {
-        "position": "(mid)",
-        "importance": null,
-        "name": "James McCarthy",
-        "playerid": 2198
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Gareth Barry",
-        "playerid": 6326
-        },
-        {
-        "position": "(att)",
-        "importance": "(k)",
-        "name": "Enner Valencia",
-        "playerid": 58574
-        },
-        {
-        "position": "(att)",
-        "importance": "(r)",
-        "name": "Romelu Lukaku",
-        "playerid": 39195
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Aaron Lennon",
-        "playerid": 8789
-        },
-        "homeBenchBattleFormation": [
-        {
-        "position": "(gk)",
-        "importance": null,
-        "name": "Mateusz Hewelt",
-        "playerid": 67100
-        },
-        {
-        "position": "(gk)",
-        "importance": "(sp)",
-        "name": "Joel Robles",
-        "playerid": 39936
-        },
-        {
-        "position": "(def)",
-        "importance": null,
-        "name": "Mason Holgate",
-        "playerid": 60013
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Gerard Deulofeu",
-        "playerid": 62341
-        },
-        {
-        "position": "(mid)",
-        "importance": null,
-        "name": "Tom S Davies",
-        "playerid": 64906
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Darron Gibson",
-        "playerid": 19551
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Ross Barkley",
-        "playerid": 43367
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Tom Cleverley",
-        "playerid": 35277
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Kevin Mirallas",
-        "playerid": 5726
-        },
-        {
-        "position": "(att)",
-        "importance": "(sp)",
-        "name": "Dominic Calvert-Lewin",
-        "playerid": 56453
-        },
-        {
-        "position": "(att)",
-        "importance": "(sp)",
-        "name": "Arouna Kone",
-        "playerid": 7734
+            "siMatchId": "`113182` (number) - en match "
         }
-        ],
-        "homepossibleinjury": null,
-        "awayAtAwayLatest5": "12X11",
-        "homeStar": 4,
-        "homesuspended": "Phil Jagielka,Yannick Bolasie,Muhamed Besic",
-        "awaypossibleinjury": "Daniel Sturridge,Divock Origi",
-        "homeSummary": "<p><strong>Snapped out of a winless streak by beating Arsenal 2-1....Have failed to beat Liverpool in 12 previous attempts....Yannick Bolasie(r)(mid), Muhamed Besic(sp)(mid) out injured....Phil Jagielka(r)(def) suspended....</strong>Everton put up a solid display in the midweek as they snapped out of a five-match winless streak with a hard fought 2-1 win over Arsenal. A poor run of just one win in their last 11 games had increased the pressure on Ronald Koeman but the Everton coach will be pleased with what he saw on the field in their last match as his side proved to be more than a match to Arsenal and fought back from a goal down to seal a deserved victory thanks to goals from Seamus Coleman and Ashley Williams. The win provides fresh boost to Everton's hopes of challenging for a Europa League spot but Koeman will be aware that his side will have to build on the performance and go on a good run if they are to be considered serious challengers for a place in the top six. They face another difficult game in their next match when they welcome arch rivals Liverpool on Monday. Everton have a poor record in the Merseyside derby and head into the match on the back of a poor run which has seen them fail to win in the last 12 meetings between the two sides, though they have lost just once in the last six games at Goodison Park. Yannick Bolasie and Muhamed Besic remain out injured for Everton who will also be without Phil Jagielka, after the defender was sent off deep in injury time against Arsenal.</p>",
-        "awayinjury": "Philippe Coutinho,Marko Grujic,Danny Ings",
-        "awayBattleFormation": [
-        {
-        "position": "(gk)",
-        "importance": null,
-        "name": "Simon Mignolet",
-        "playerid": 26839
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Nathaniel Clyne",
-        "playerid": 35550
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Ragnar Klavan",
-        "playerid": 7708
-        },
-        {
-        "position": "(def)",
-        "importance": null,
-        "name": "Dejan Lovren",
-        "playerid": 12995
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "James Milner",
-        "playerid": 8650
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Adam Lallana",
-        "playerid": 29468
-        },
-        {
-        "position": "(mid)",
-        "importance": "(r)",
-        "name": "Jordan Henderson",
-        "playerid": 35653
-        },
-        {
-        "position": "(mid)",
-        "importance": "(k)",
-        "name": "Georginio Wijnaldum",
-        "playerid": 23074
-        },
-        {
-        "position": "(att)",
-        "importance": null,
-        "name": "Sadio Mane",
-        "playerid": 47928
-        },
-        {
-        "position": "(att)",
-        "importance": "(r)",
-        "name": "Divock Origi",
-        "playerid": 52386
-        },
-        {
-        "position": "(att)",
-        "importance": null,
-        "name": "Roberto Firmino",
-        "playerid": 44074
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Joel Matip",
-        "playerid": 40140
-        },
-        "awayBenchBattleFormation": [
-        {
-        "position": "(gk)",
-        "importance": "(r)",
-        "name": "Loris Karius",
-        "playerid": 47731
-        },
-        {
-        "position": "(def)",
-        "importance": "(sp)",
-        "name": "Alberto Moreno",
-        "playerid": 48861
-        },
-        {
-        "position": "(def)",
-        "importance": "(r)",
-        "name": "Joel Matip",
-        "playerid": 40140
-        },
-        {
-        "position": "(def)",
-        "importance": null,
-        "name": "Trent Arnold",
-        "playerid": 67055
-        },
-        {
-        "position": "(mid)",
-        "importance": null,
-        "name": "Ovie Ejaria",
-        "playerid": 66804
-        },
-        {
-        "position": "(mid)",
-        "importance": null,
-        "name": "Ben Woodburn",
-        "playerid": 68392
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Lucas Leiva",
-        "playerid": 10918
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Kevin Stewart",
-        "playerid": 47546
-        },
-        {
-        "position": "(def)",
-        "importance": "(sp)",
-        "name": "Ragnar Klavan",
-        "playerid": 7708
-        },
-        {
-        "position": "(mid)",
-        "importance": "(sp)",
-        "name": "Emre Can",
-        "playerid": 47724
-        },
-        {
-        "position": "(att)",
-        "importance": "(sp)",
-        "name": "Daniel Sturridge",
-        "playerid": 8414
-        }
-        ],
-        "homeAtHomeLatest5": "1XX1X",
-        "matchDate": "20 December 2016 04:00:00",
-        "homeFormation": "4-2-3-1",
-        "siMatchId": 113182,
-        "awayName": "Liverpool",
-        "homeinjury": null,
-        "weather": 7,
-        "homeName": "Everton",
-        "homeLatest5": "12X2X",
-        "awaySummary": "<p style=\"text-align: justify;\"><strong>Climbed back in second place with convincing 3:0 away win vs. Middlesbrough and will enter the local derby full of confidence &hellip; Can&rsquo;t afford mistakes as gap to the top is already six points &hellip; Ings (sp) (att) and Coutinho (k) (mid) sidelined &hellip; Sturridge (sp) (att), Grujic (sp) (mid), Matip (r) (def) and Can (sp) (mid) doubtful<span style=\"color: #0000ff;\">. Can and Matip passed fit, but Grujic ruled out</span> &hellip; Origi (sp) (att) slight concern ... </strong>Liverpool returned to winning ways on Wednesday night when star performance from Lallana, he scored two goals and added an assist to that, saw the Reds cruising to an easy 3:0 away win vs. Middlesbrough and as a result of that they reclaimed second place on goal difference. Klopp was happy not just with the usual strong display in the final third but also with his team&rsquo;s defensive stability and after being restored between the posts and keeping a clean sheet now Mignolet is almost certain to start again. He has previous experience in this fierce local derby too and Liverpool must seek another win on Monday night if they are to remain with realistic chances to catch Chelsea. In recent weeks the young striker Origi grabbed his chance, he became a regular starter once Coutinho got hurt, and with goals in five consecutive games in all competition the Belgian is taking the league by storm at the minute. He picked up a knock on Wednesday, but it is 99% certain that he will recover on time for this one. All of Sturridge, Grujic, Matip and Can also battle hard to return to full fitness soon and at least the last two have good chances to achieve that on time for the Merseyside derby.&nbsp;<span style=\"color: #0000ff;\">Matip and Can are cleared to play, with Sturridge also hopeful to make the bench, but Grujic will miss again.</span> Ings and Coutinho are long-term absentees and they won&rsquo;t feature.<strong><br /></strong></p>",
-        "awayLatest5": "1X21X",
-        "awayFormation": "4-4-2",
-        "caiexMatchId":1284
-        }
+
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+
+            {
+            "awaysuspended": null,
+            "leagueName": "Premier League",
+            "awayStar": 4,
+            "homeBattleFormation": [
+            {
+            "position": "(gk)",
+            "importance": "(k)",
+            "name": "Maarten Stekelenburg",
+            "playerid": 6072
+            },
+            {   
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Seamus Coleman",
+            "playerid": 23804
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Ramiro Funes Mori",
+            "playerid": 63237
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Ashley Williams",
+            "playerid": 320
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Leighton Baines",
+            "playerid": 9013
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Idrissa Gueye",
+            "playerid": 40566
+            },
+            {
+            "position": "(mid)",
+            "importance": null,
+            "name": "James McCarthy",
+            "playerid": 2198
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Gareth Barry",
+            "playerid": 6326
+            },
+            {
+            "position": "(att)",
+            "importance": "(k)",
+            "name": "Enner Valencia",
+            "playerid": 58574
+            },
+            {
+            "position": "(att)",
+            "importance": "(r)",
+            "name": "Romelu Lukaku",
+            "playerid": 39195
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Aaron Lennon",
+            "playerid": 8789
+            },
+            "homeBenchBattleFormation": [
+            {
+            "position": "(gk)",
+            "importance": null,
+            "name": "Mateusz Hewelt",
+            "playerid": 67100
+            },
+            {
+            "position": "(gk)",
+            "importance": "(sp)",
+            "name": "Joel Robles",
+            "playerid": 39936
+            },
+            {
+            "position": "(def)",
+            "importance": null,
+            "name": "Mason Holgate",
+            "playerid": 60013
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Gerard Deulofeu",
+            "playerid": 62341
+            },
+            {
+            "position": "(mid)",
+            "importance": null,
+            "name": "Tom S Davies",
+            "playerid": 64906
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Darron Gibson",
+            "pl ayerid": 19551
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Ross Barkley",
+            "playerid": 43367
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Tom Cleverley",
+            "playerid": 35277
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Kevin Mirallas",
+            "playerid": 5726
+            },
+            {
+            "position": "(att)",
+            "importance": "(sp)",
+            "name": "Dominic Calvert-Lewin",
+            "playerid": 56453
+            },
+            {
+            "position": "(att)",
+            "importance": "(sp)",
+            "name": "Arouna Kone",
+            "playerid": 7734
+            }
+            ],
+            "homepossibleinjury": null,
+            "awayAtAwayLatest5": "12X11",
+            "homeStar": 4,
+            "homesuspended": "Phil Jagielka,Yannick Bolasie,Muhamed Besic",
+            "awaypossibleinjury": "Daniel Sturridge,Divock Origi",
+            "homeSummary": "<p><strong>Snapped out of a winless streak by beating Arsenal 2-1....Have failed to beat Liverpool in 12 previous attempts....Yannick Bolasie(r)(mid), Muhamed Besic(sp)(mid) out injured....Phil Jagielka(r)(def) suspended....</strong>Everton put up a solid display in the midweek as they snapped out of a five-match winless streak with a hard fought 2-1 win over Arsenal. A poor run of just one win in their last 11 games had increased the pressure on Ronald Koeman but the Everton coach will be pleased with what he saw on the field in their last match as his side proved to be more than a match to Arsenal and fought back from a goal down to seal a deserved victory thanks to goals from Seamus Coleman and Ashley Williams. The win provides fresh boost to Everton's hopes of challenging for a Europa League spot but Koeman will be aware that his side will have to build on the performance and go on a good run if they are to be considered serious challengers for a place in the top six. They face another difficult game in their next match when they welcome arch rivals Liverpool on Monday. Everton have a poor record in the Merseyside derby and head into the match on the back of a poor run which has seen them fail to win in the last 12 meetings between the two sides, though they have lost just once in the last six games at Goodison Park. Yannick Bolasie and Muhamed Besic remain out injured for Everton who will also be without Phil Jagielka, after the defender was sent off deep in injury time against Arsenal.</p>",
+            "awayinjury": "Philippe Coutinho,Marko Grujic,Danny Ings",
+            "awayBattleFormation": [
+            {
+            "position": "(gk)",
+            "importance": null,
+            "name": "Simon Mignolet",
+            "playerid": 26839
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Nathaniel Clyne",
+            "playerid": 35550
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Ragnar Klavan",
+            "playerid": 7708
+            },
+            {
+            "position": "(def)",
+            "importance": null,
+            "name": "Dejan Lovren",
+            "playerid": 12995
+            },
+            {   
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "James Milner",
+            "playerid": 8650
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Adam Lallana",
+            "playerid": 29468
+            },
+            {
+            "position": "(mid)",
+            "importance": "(r)",
+            "name": "Jordan Henderson",
+            "playerid": 35653
+            },
+            {
+            "position": "(mid)",
+            "importance": "(k)",
+            "name": "Georginio Wijnaldum",
+            "playerid": 23074
+            },
+            {
+            "position": "(att)",
+            "importance": null,
+            "name": "Sadio Mane",
+            "playerid": 47928
+            },
+            {
+            "position": "(att)",
+            "importance": "(r)",
+            "name": "Divock Origi",
+            "playerid": 52386
+            },
+            {
+            "position": "(att)",
+            "importance": null,
+            "name": "Roberto Firmino",
+            "playerid": 44074
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Joel Matip",
+            "playerid": 40140
+            },
+            "awayBenchBattleFormation": [
+            {
+            "position": "(gk)",
+            "importance": "(r)",
+            "name": "Loris Karius",
+            "playerid": 47731
+            },
+            {
+            "position": "(def)",
+            "importance": "(sp)",
+            "name": "Alberto Moreno",
+            "playerid": 48861
+            },
+            {
+            "position": "(def)",
+            "importance": "(r)",
+            "name": "Joel Matip",
+            "playerid": 40140
+            },
+            {
+            "position": "(def)",
+            "importance": null,
+            "name": "Trent Arnold",
+            "playerid": 67055
+            },
+            {
+            "position": "(mid)",
+            "importance": null,
+            "name": "Ovie Ejaria",
+            "playerid": 66804
+            },
+            {
+            "position": "(mid)",
+            "importance": null,
+            "name": "Ben Woodburn",
+            "playerid": 68392
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Lucas Leiva",
+            "playerid": 10918
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Kevin Stewart",
+            "playerid": 47546
+            },
+            {
+            "position": "(def)",
+            "importance": "(sp)",
+            "name": "Ragnar Klavan",
+            "playerid": 7708
+            },
+            {
+            "position": "(mid)",
+            "importance": "(sp)",
+            "name": "Emre Can",
+            "playerid": 47724
+            },
+            {
+            "position": "(att)",
+            "importance": "(sp)",
+            "name": "Daniel Sturridge",
+            "playerid": 8414
+            }
+            ],
+            "homeAtHomeLatest5": "1XX1X",
+            "matchDate": "20 December 2016 04:00:00",
+            "homeFormation": "4-2-3-1",
+            "siMatchId": 113182,
+            "awayName": "Liverpool",
+            "homeinjury": null,
+            "weather": 7,
+            "homeName": "Everton",
+            "homeLatest5": "12X2X",
+            "awaySummary": "<p style=\"text-align: justify;\"><strong>Climbed back in second place with convincing 3:0 away win vs. Middlesbrough and will enter the local derby full of confidence &hellip; Can&rsquo;t afford mistakes as gap to the top is already six points &hellip; Ings (sp) (att) and Coutinho (k) (mid) sidelined &hellip; Sturridge (sp) (att), Grujic (sp) (mid), Matip (r) (def) and Can (sp) (mid) doubtful<span style=\"color: #0000ff;\">. Can and Matip passed fit, but Grujic ruled out</span> &hellip; Origi (sp) (att) slight concern ... </strong>Liverpool returned to winning ways on Wednesday night when star performance from Lallana, he scored two goals and added an assist to that, saw the Reds cruising to an easy 3:0 away win vs. Middlesbrough and as a result of that they reclaimed second place on goal difference. Klopp was happy not just with the usual strong display in the final third but also with his team&rsquo;s defensive stability and after being restored between the posts and keeping a clean sheet now Mignolet is almost certain to start again. He has previous experience in this fierce local derby too and Liverpool must seek another win on Monday night if they are to remain with realistic chances to catch Chelsea. In recent weeks the young striker Origi grabbed his chance, he became a regular starter once Coutinho got hurt, and with goals in five consecutive games in all competition the Belgian is taking the league by storm at the minute. He picked up a knock on Wednesday, but it is 99% certain that he will recover on time for this one. All of Sturridge, Grujic, Matip and Can also battle hard to return to full fitness soon and at least the last two have good chances to achieve that on time for the Merseyside derby.&nbsp;<span style=\"color: #0000ff;\">Matip and Can are cleared to play, with Sturridge also hopeful to make the bench, but Grujic will miss again.</span> Ings and Coutinho are long-term absentees and they won&rsquo;t feature.<strong><br /></strong></p>",
+            "awayLatest5": "1X21X",
+            "awayFormation": "4-4-2",
+            "caiexMatchId":1284
+            }
 
 
 
@@ -717,12 +737,25 @@ SI资讯的数据接口-微信版
 中文球员信息
 
     
-### player_cn [GET]
-+ Response 200 (application/json)
+### player_cn [POST]
 
++ request (application/json)
+        
         {
         
         }
+
++ Response 201 (application/json)
+
+    + Headers
+    
+            Location: www.caiex.com
+            
+    + Body
+    
+            {
+        
+            }
 
 
 
@@ -754,79 +787,88 @@ SI资讯的数据接口-微信版
 - importance: 球员重要性（球员id评级，包括：k（核心）、r（主力）、sp（替补）、null（空值））
 - matchNum: 比赛次数
 
-+ Parameters
-    + playerId: `47928` (number) - player id
     
+### player_en [POST]
 
-### player_en [GET]
-
-+ Response 200 (application/json)
++ Request (application/json)
 
         {
-        "position": "(att)",
-        "fiveGames": [
-        {
-        "homeName": "Liverpool",
-        "awayName": "West Ham United",
-        "score": "2:2",
-        "bunko": "draw",
-        "expression": "5"
-        },
-        {
-        "homeName": "Bournemouth",
-        "awayName": "Liverpool",
-        "score": "4:3",
-        "bunko": "win",
-        "expression": "4-5-6"
-        },
-        {
-        "homeName": "Liverpool",
-        "awayName": "Sunderland",
-        "score": "2:0",
-        "bunko": "win",
-        "expression": "5"
-        },
-        {
-        "homeName": "Liverpool",
-        "awayName": "Watford",
-        "score": "0:0",
-        "bunko": "draw",
-        "expression": "4-5-6"
-        },
-        {
-        "homeName": "Liverpool",
-        "awayName": "Leeds United",
-        "score": "2:0",
-        "bunko": "win",
-        "expression": "5"
-        },
-        {
-        "homeName": "Middlesbrough",
-        "awayName": "Liverpool",
-        "score": "0:3",
-        "bunko": "lose",
-        "expression": "5"
-        },
-        {
-        "homeName": "Southampton",
-        "awayName": "Liverpool",
-        "score": "0:0",
-        "bunko": "draw",
-        "expression": "4-5"
+            "playerId": "`47928` (number) - player id "
         }
-        ],
-        "playerImg": null,
-        "firstNum": 16,
-        "playerName": "Sadio Mane",
-        "playerid": 47928,
-        "team": "Liverpool",
-        "yellNum": 2,
-        "goalNum": 7,
-        "redNum": 0,
-        "nationality": "French",
-        "importance": null,
-        "matchNum": 16
-        }
+
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+    
+            {
+            "position": "(att)",
+            "fiveGames": [
+            {
+            "homeName": "Liverpool",
+            "awayName": "West Ham United",
+            "score": "2:2",
+            "bunko": "draw",
+            "expression": "5"
+            },
+            {
+            "homeName": "Bournemouth",
+            "awayName": "Liverpool",
+            "score": "4:3",
+            "bunko": "win",
+            "expression": "4-5-6"
+            },
+            {
+            "homeName": "Liverpool",
+            "awayName": "Sunderland",
+            "score": "2:0",
+            "bunko": "win",
+            "expression": "5"
+            },
+            {
+            "homeName": "Liverpool",
+            "awayName": "Watford",
+            "score": "0:0",
+            "bunko": "draw",
+            "expression": "4-5-6"
+            },
+            {
+            "homeName": "Liverpool",
+            "awayName": "Leeds United",
+            "score": "2:0",
+            "bunko": "win",
+            "expression": "5"
+            },
+            {
+            "homeName": "Middlesbrough",
+            "awayName": "Liverpool",
+            "score": "0:3",
+            "bunko": "lose",
+            "expression": "5"
+            },
+            {
+            "homeName": "Southampton",
+            "awayName": "Liverpool",
+            "score": "0:0",
+            "bunko": "draw",
+            "expression": "4-5"
+            }
+            ],
+            "playerImg": null,
+            "firstNum": 16,
+            "playerName": "Sadio Mane",
+            "playerid": 47928,
+            "team": "Liverpool",
+            "yellNum": 2,
+            "goalNum": 7,
+            "redNum": 0,
+            "nationality": "French",
+            "importance": null,
+            "matchNum": 16
+            }
 
 
 
@@ -837,13 +879,25 @@ SI资讯的数据接口-微信版
 
 中文赛事信息
 
-### matches_cn [GET]
-+ Response 200 (application/json)
+### matches_cn [POST]
 
++ request (application/json)
+        
         {
         
         }
 
++ Response 201 (application/json)
+
+    + Headers
+    
+            Location: www.caiex.com
+            
+    + Body
+    
+            {
+        
+            }
 
 
 ## SINA Ying - 英文赛事 [/matches_en?siMatchId={siMatchId}]
@@ -868,49 +922,59 @@ SI资讯的数据接口-微信版
 - team：1-主队、2-客队
 - playerid：该事件的发生者的id
 - eventType：事件类型（1-进球（goal），5-黄牌（yellow card），6-红牌（red card））
-+ Parameters
-    + siMatchId: `113182` (number) - siMatchId
 
-### matches_en [GET]
-+ Response 200 (application/json)
+
+### matches_en [POST]
+
++ Request (application/json)
 
         {
-        "homeScoreNo": 23,
-        "awayName": "Liverpool",
-        "awayFumbleNo": 20,
-        "homeName": "Everton",
-        "homeFumbleAverage": 1,
-        "keyEvents": [
-            {
-            "team":1,
-            "eventType":1,
-            "eventDesc":"goal",
-            "minute":"20"
-            "playerid":46124
-            },
-            {
-            "team":1,
-            "eventType":1,
-            "eventDesc":"goal",
-            "minute":"55"
-            "playerid":21065
-            },
-            {
-            "team":1,
-            "eventType":5,
-            "eventDesc": "yellow card",
-            "minute":60,
-            "playerid":40832
-            }
-        ],
-        "homeFumbleNo": 20,
-        "awayGoalAverage": 2,
-        "homeGoalAverage": 1,
-        "awayScoreNo": 34,
-        "awayFumbleAverage": 1
+            "siMatchId": "`113182` (number) - siMatchId "
         }
 
-
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+        
+            {
+            "homeScoreNo": 23,
+            "awayName": "Liverpool",
+            "awayFumbleNo": 20,
+            "homeName": "Everton",
+            "homeFumbleAverage": 1,
+            "keyEvents": [
+                {
+                "team":1,
+                "eventType":1,
+                "eventDesc":"goal",
+                "minute":"20"
+                "playerid":46124
+                },
+                {
+                "team":1,
+                "eventType":1,
+                "eventDesc":"goal",
+                "minute":"55"
+                "playerid":21065
+                },
+                {
+                "team":1,
+                "eventType":5,
+                "eventDesc": "yellow card",
+                "minute":60,
+                "playerid":40832
+                }
+            ],
+            "homeFumbleNo": 20,
+            "awayGoalAverage": 2,
+            "homeGoalAverage": 1,
+            "awayScoreNo": 34,
+            "awayFumbleAverage": 1
+            }
 
 
 
@@ -919,8 +983,8 @@ SI资讯的数据接口-微信版
 通过起止时间获取赛事列表
 
 请求参数：
-- startTimeStamp
-- endTimeStamp
+- startTimeStamp：起始时间
+- endTimeStamp：结束时间
 
 返回字段：
 - kickoffTimeStamp：时间戳
@@ -929,28 +993,39 @@ SI资讯的数据接口-微信版
 - away：客队中文名称
 - caiexMatchId：caiex的matchid
 
-+ Parameters
-    + startTimeStamp
-    + endTimeStamp
 
-### caiexMatchesList [GET]
-+ Response 200 (application/json)
+### caiexMatchesList [POST]
+
++ Request (application/json)
 
         {
-        "kickoffTimeStamp": "1483225000",
-        "league": "英格兰超级联赛",
-        "home": "利物浦",
-        "away": "斯托克城",
-        "caiexMatchId": 1331
+            "startTimeStamp": "起始时间"，
+            "endTimeStamp": "结束时间"
         }
+
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+    
+            {
+            "kickoffTimeStamp": "1483225000",
+            "league": "英格兰超级联赛",
+            "home": "利物浦",
+            "away": "斯托克城",
+            "caiexMatchId": 1331
+            }
 
 ## SINA Ying - 英文赛事列表 [/siMatchList?startTimeStamp={startTimeStamp}&endTimeStamp={endTimeStamp}]
 
 通过起止时间获取赛事列表
 
 请求参数：
-- startTimeStamp
-- endTimeStamp
+- startTimeStamp: 起始时间
+- endTimeStamp： 结束时间
 
 返回字段：
 - kickoffTimeStamp：时间戳
@@ -959,17 +1034,28 @@ SI资讯的数据接口-微信版
 - away：客队英文名称
 - siMatchId：si的matchid
 
-+ Parameters
-    + startTimeStamp
-    + endTimeStamp
 
-### siMatchList [GET]
-+ Response 200 (application/json)
+### siMatchList [POST]
+
++ Request (application/json)
 
         {
-        "kickoffTimeStamp": "1483225000",
-        "league": "Premier League",
-        "home": "Liverpool",
-        "away": "Stoke",
-        "siMatchId": 113759
+            "startTimeStamp": "起始时间"，
+            "endTimeStamp": "结束时间"
         }
+
++ Response 201 (application/json)
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+
+            {
+            "kickoffTimeStamp": "1483225000",
+            "league": "Premier League",
+            "home": "Liverpool",
+            "away": "Stoke",
+            "siMatchId": 113759
+            }
