@@ -19,7 +19,7 @@ SI资讯的数据接口-微信版
 - caiexMatchId：caiex的matchid
 - leagueName：联赛名称
 - weather：天气（显示温度）
-- matchDate：比赛开始的时间（eg: 2016-12-20 04:00:00）
+- matchDate：比赛开始的时间（时间戳）
 - homeName：主队中文名称
 - homeStar：主队星级
 - homeSummary：主队赛事信息
@@ -58,9 +58,10 @@ SI资讯的数据接口-微信版
         }
 
 + Response 201 (application/json)
+
     
     + Headers
-    
+
             Location: www.caiex.com
         
     + Body
@@ -197,8 +198,8 @@ SI资讯的数据接口-微信版
             }
             ],
             "homeStar": 4,
-            "homesuspended": "菲尔·贾吉尔卡,亚尼克·博拉西耶,穆罕默德·贝希奇",
-            "awaypossibleinjury": "马蒂普,格鲁伊奇,埃姆雷·坎,丹尼尔·斯图里奇,奥利吉",
+            "homesuspended": "菲尔·贾吉尔卡(主力后卫),亚尼克·博拉西耶(主力中场),穆罕默德·贝希奇(替补中场)",
+            "awaypossibleinjury": "丹尼尔·斯图里奇(替补前锋),奥利吉(替补前锋)",
             "awayBattleFormation": [
             {
             "position": "门将",
@@ -352,10 +353,10 @@ SI资讯的数据接口-微信版
             "homepossibleinjury": null,
             "awayAtAwayLatest5": "12X11",
             "homeSummary": "<p>上周中埃弗顿展现了坚固的防守表现，在周中的比赛中以2-1战胜了阿森纳，结束了五场比赛不胜的尴尬局面，过去11场比赛中只胜一轮的糟糕表现让主教练罗纳德科曼身上的压力更重了，但是他对于埃弗顿上场比赛的表现感到很满意，因为他的球队表现得比阿森纳更好，并且拜威廉姆斯和科尔曼的两粒进球所赐，埃弗顿抵抗住了对方的一粒进球，他们值得这场胜利。这场胜利也给埃弗顿冲击欧冠席位的希望带来了新的鼓舞，但是科曼意识到他的球队必须表现得更好，这样他们才会被正式视作前六名席位的挑战者。在下周他们将要面临另一场艰难的比赛，他们周一将在主场迎战头号劲敌利物浦。埃弗顿在过去的默西塞德德比中有着糟糕的记录，尽管他们在古迪逊公园的过去6场比赛中仅仅输了1次，但是在双方过去的12场交手中埃弗顿都保持不胜。博拉西和贝西奇仍旧因伤缺战，防守球员贾吉尔卡在与阿森纳的比赛中受重伤也无法为埃弗顿出战。</p>\n",
-            "awayinjury": "菲利佩·库蒂尼奥,丹尼·爱格斯",
+            "awayinjury": "菲利佩·库蒂尼奥(核心中场),马尔科格鲁伊奇(替补中场),丹尼.英斯(替补前锋)",
             "homeFormation": "4-2-3-1",
             "homeAtHomeLatest5": "1XX1X",
-            "matchDate": "2016-12-20 04:00:00",
+            "matchDate": "1482793200000",
             "awayName": "利物浦",
             "caiexMatchId": 1284,
             "homeinjury": null,
@@ -380,7 +381,7 @@ SI资讯的数据接口-微信版
 - caiexMatchId：caiex的matchid
 - leagueName：联赛名称
 - weather：天气（显示温度）
-- matchDate：比赛开始的时间（eg: 20 December 2016 04:00:00）
+- matchDate：比赛开始的时间（时间戳）
 - homeName：主队英文名称
 - homeStar：主队星级
 - homeSummary：主队赛事信息
@@ -716,7 +717,7 @@ SI资讯的数据接口-微信版
             }
             ],
             "homeAtHomeLatest5": "1XX1X",
-            "matchDate": "20 December 2016 04:00:00",
+            "matchDate": "1482793200000",
             "homeFormation": "4-2-3-1",
             "siMatchId": 113182,
             "awayName": "Liverpool",
@@ -736,13 +737,37 @@ SI资讯的数据接口-微信版
 
 中文球员信息
 
+请求参数:
+- playerId: si的playerId
+
+返回字段:
+- position: 球员位置（包括：def （后卫）、att（前锋）、mid（中场）、gk（门将））
+- fiveGames: 近5场比赛表现（以数组形式列出）
+- homeName: 主队名称
+- awayName: 客队名称
+- score: 比分（主队分数：客队分数）
+- bunko: 赛果（包括：win（胜）、draw（平）、lose（负）以上赛果均以主队为标准）
+- expression: 红黄牌等信息（1-黄牌，2-红牌，3-换上，4-换下，5-首发，6-进球，7-乌龙球  以上为可能出现的全部字段）
+- playerImg: 球员图片
+- firstNum: 首发场次
+- playerName: 球员姓名
+- playerid: 球员id
+- team: 球队
+- yellNum: 黄牌次数
+- goalNum: 进球次数
+- redNum: 红牌次数
+- nationality: 球员国籍
+- importance: 球员重要性（球员id评级，包括：k（核心）、r（主力）、sp（替补）、null（空值））
+- matchNum: 比赛次数
     
+
 ### player_cn [POST]
 
 + request (application/json)
+
         
         {
-        
+            "playerId": "`1763` (number) - caiex player id "
         }
 
 + Response 201 (application/json)
@@ -754,7 +779,69 @@ SI资讯的数据接口-微信版
     + Body
     
             {
-        
+            "position": "前锋",
+            "fiveGames": [
+            {
+            "homeName": "利物浦",
+            "awayName": "西汉姆联",
+            "score": "2:2",
+            "bunko": "平",
+            "expression": "5"
+            },
+            {
+            "homeName": "伯恩茅斯",
+            "awayName": "利物浦",
+            "score": "4:3",
+            "bunko": "胜",
+            "expression": "4-5-6"
+            },
+            {
+            "homeName": "利物浦",
+            "awayName": "桑德兰",
+            "score": "2:0",
+            "bunko": "胜",
+            "expression": "5"
+            },
+            {
+            "homeName": "利物浦",
+            "awayName": "沃特福德",
+            "score": "0:0",
+            "bunko": "平",
+            "expression": "4-5-6"
+            },
+            {
+            "homeName": "利物浦",
+            "awayName": "利兹联",
+            "score": "2:0",
+            "bunko": "胜",
+            "expression": "5"
+            },
+            {
+            "homeName": "米德尔斯堡",
+            "awayName": "利物浦",
+            "score": "0:3",
+            "bunko": "负",
+            "expression": "5"
+            },
+            {
+            "homeName": "南安普顿",
+            "awayName": "利物浦",
+            "score": "0:0",
+            "bunko": "平",
+            "expression": "4-5"
+            }
+            ],
+            "playerImg": null,
+            "firstNum": 16,
+            "playerName": "马内",
+            "playerid": 1763,
+            "team": "利物浦",
+            "yellNum": 2,
+            "goalNum": 7,
+            "redNum": 0,
+            "nationality": "法国",
+            "importance": "主力",
+            "matchNum": 16
             }
 
 
@@ -765,7 +852,7 @@ SI资讯的数据接口-微信版
 英文球员信息
 
 请求参数:
-- playerId
+- playerId: si的playerId
 
 返回字段:
 - position: 球员位置（包括：def （后卫）、att（前锋）、mid（中场）、gk（门将））
@@ -793,10 +880,11 @@ SI资讯的数据接口-微信版
 + Request (application/json)
 
         {
-            "playerId": "`47928` (number) - player id "
+            "playerId": "`47928` (number) - si player id "
         }
 
 + Response 201 (application/json)
+
     
     + Headers
     
@@ -866,7 +954,7 @@ SI资讯的数据接口-微信版
             "goalNum": 7,
             "redNum": 0,
             "nationality": "French",
-            "importance": null,
+            "importance": "(r)",
             "matchNum": 16
             }
 
@@ -879,12 +967,32 @@ SI资讯的数据接口-微信版
 
 中文赛事信息
 
+请求参数：
+- caiexMatchId
+
+返回字段：
+- homeScoreNo：主队总进球数
+- homeFumbleNo：主队失球数
+- homeGoalAverage：主队平均进球数
+- homeFumbleAverage：主队平均失球数
+- awayScoreNo：客队总进球数
+- awayFumbleNo：客队失球数
+- awayGoalAverage：客队平均进球数
+- awayFumbleAverage：客队平均失球数
+- keyEvents：关键事件（主客队的进球和红黄牌情况）
+- minute：发生关键事件的时间
+- eventDesc：红黄牌或进球
+- team：1-主队、2-客队
+- playerid：该事件的发生者的id
+- eventType：事件类型（1-进球（goal），5-黄牌（yellow card），6-红牌（red card））
+
+
 ### matches_cn [POST]
 
-+ request (application/json)
-        
++ Request (application/json)
+
         {
-        
+            "caiexMatchId": "`113182` (number) - siMatchId "
         }
 
 + Response 201 (application/json)
@@ -896,7 +1004,41 @@ SI资讯的数据接口-微信版
     + Body
     
             {
-        
+            {
+            "homeScoreNo": 23,
+            "awayName": "Liverpool",
+            "awayFumbleNo": 20,
+            "homeName": "Everton",
+            "homeFumbleAverage": 1,
+            "keyEvents": [
+                {
+                "team":1,
+                "eventType":1,
+                "eventDesc":"进球",
+                "minute":"20"
+                "playerid":46124
+                },
+                {
+                "team":1,
+                "eventType":1,
+                "eventDesc":"进球",
+                "minute":"55"
+                "playerid":21065
+                },
+                {
+                "team":1,
+                "eventType":5,
+                "eventDesc": "黄牌",
+                "minute":60,
+                "playerid":40832
+                }
+            ],
+            "homeFumbleNo": 20,
+            "awayGoalAverage": 2,
+            "homeGoalAverage": 1,
+            "awayScoreNo": 34,
+            "awayFumbleAverage": 1
+            }
             }
 
 
@@ -933,6 +1075,7 @@ SI资讯的数据接口-微信版
         }
 
 + Response 201 (application/json)
+
     
     + Headers
     
@@ -999,11 +1142,12 @@ SI资讯的数据接口-微信版
 + Request (application/json)
 
         {
-            "startTimeStamp": "起始时间"，
-            "endTimeStamp": "结束时间"
+            "startTimeStamp": "1483495200000"，
+            "endTimeStamp": "1483581600000"
         }
 
 + Response 201 (application/json)
+
     
     + Headers
     
@@ -1040,8 +1184,8 @@ SI资讯的数据接口-微信版
 + Request (application/json)
 
         {
-            "startTimeStamp": "起始时间"，
-            "endTimeStamp": "结束时间"
+            "startTimeStamp": "1483495200000"，
+            "endTimeStamp": "1483581600000"
         }
 
 + Response 201 (application/json)
@@ -1058,4 +1202,297 @@ SI资讯的数据接口-微信版
             "home": "Liverpool",
             "away": "Stoke",
             "siMatchId": 113759
+            }
+            
+            
+            
+## SINA Ying - 中文查询球员id [/caiexPlayerList]
+
+通过中文赛事id查询当前赛事首发球员的中英文id
+
+请求参数：
+- caiexMatchId: caiex的matchId
+
+返回字段：
+- playerName: 球员中文名称
+- siPlayerId: si的playerid
+- caiexPlayerId: caiex的playerid
+
+### caiexPlayerList [POST]
+
++ Request (application/json)
+
+        {
+            "caiexMatchId": 1323
+        }
+
++ Response 201 (application/json)
+
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+    
+    
+            {
+            "caiexMatchId": 1323,
+            "caiexPlayerList": [
+            {
+            "playerName": "库尔图瓦？",
+            "siPlayerId": 39286,
+            "caiexPlayerId": 1407
+            },
+            {
+            "playerName": "大卫·路易斯",
+            "siPlayerId": 20341,
+            "caiexPlayerId": 1408
+            },
+            {
+            "playerName": "卡希尔？",
+            "siPlayerId": 6328,
+            "caiexPlayerId": 1409
+            },
+            {
+            "playerName": "阿斯皮利奎塔？",
+            "siPlayerId": 21582,
+            "caiexPlayerId": 1410
+            },
+            {
+            "playerName": "摩西？",
+            "siPlayerId": 28925,
+            "caiexPlayerId": 1411
+            },
+            {
+            "playerName": "法布雷加斯？",
+            "siPlayerId": 6307,
+            "caiexPlayerId": 1417
+            },
+            {
+            "playerName": "马蒂奇？",
+            "siPlayerId": 39102,
+            "caiexPlayerId": 1412
+            },
+            {
+            "playerName": "马科斯·阿隆索",
+            "siPlayerId": 41125,
+            "caiexPlayerId": 1413
+            },
+            {
+            "playerName": "威廉？",
+            "siPlayerId": 30321,
+            "caiexPlayerId": 1414
+            },
+            {
+            "playerName": "巴舒亚伊？",
+            "siPlayerId": 46472,
+            "caiexPlayerId": 1415
+            },
+            {
+            "playerName": "阿扎尔？",
+            "siPlayerId": 30937,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "博鲁茨？",
+            "siPlayerId": 51515,
+            "caiexPlayerId": 1418
+            },
+            {
+            "playerName": "亚当·史密斯",
+            "siPlayerId": 56670,
+            "caiexPlayerId": 1506
+            },
+            {
+            "playerName": "斯蒂芬·库克",
+            "siPlayerId": 36075,
+            "caiexPlayerId": 1507
+            },
+            {
+            "playerName": "西蒙·弗朗西斯",
+            "siPlayerId": 792,
+            "caiexPlayerId": 1512
+            },
+            {
+            "playerName": "查理·丹尼尔斯",
+            "siPlayerId": 22018,
+            "caiexPlayerId": 1511
+            },
+            {
+            "playerName": "威尔谢尔？",
+            "siPlayerId": 33970,
+            "caiexPlayerId": 1526
+            },
+            {
+            "playerName": "阿特尔？",
+            "siPlayerId": 42035,
+            "caiexPlayerId": 1525
+            },
+            {
+            "playerName": "弗雷泽？",
+            "siPlayerId": 43568,
+            "caiexPlayerId": 1524
+            },
+            {
+            "playerName": "约舒亚·金",
+            "siPlayerId": 39852,
+            "caiexPlayerId": 1426
+            },
+            {
+            "playerName": "马塞·皮尤",
+            "siPlayerId": 5530,
+            "caiexPlayerId": 1516
+            },
+            {
+            "playerName": "卡兰·威尔逊",
+            "siPlayerId": 43983,
+            "caiexPlayerId": 1522
+            }
+            ]
+            }
+## SINA Ying - 英文查询球员id [/siPlayerList]
+
+通过英文赛事id查询当前赛事首发球员的中英文id
+
+请求参数：
+- siMatchId: si的matchId
+
+返回字段：
+- playerName: 球员英文名称
+- siPlayerId: si的playerid
+- caiexPlayerId: caiex的playerid
+
+### siPlayerList [POST]
+
+
++ Request (application/json)
+
+        {
+            "siMatchId": 113188
+        }
+
++ Response 201 (application/json)
+
+    
+    + Headers
+    
+            Location: www.caiex.com
+        
+    + Body
+    
+            {
+            "siMatchId": 113188,
+            "siPlayerList": [
+            {
+            "playerName": "Thibaut Courtois",
+            "siPlayerId": 39286,
+            "caiexPlayerId": 1407
+            },
+            {
+            "playerName": "David Luiz",
+            "siPlayerId": 20341,
+            "caiexPlayerId": 1408
+            },
+            {
+            "playerName": "Gary Cahill",
+            "siPlayerId": 6328,
+            "caiexPlayerId": 1409
+            },
+            {
+            "playerName": "Cesar Azpilicueta",
+            "siPlayerId": 21582,
+            "caiexPlayerId": 1410
+            },
+            {
+            "playerName": "Victor Moses",
+            "siPlayerId": 28925,
+            "caiexPlayerId": 1411
+            },
+            {
+            "playerName": "Cesc Fabregas",
+            "siPlayerId": 6307,
+            "caiexPlayerId": 1417
+            },
+            {
+            "playerName": "Nemanja Matic",
+            "siPlayerId": 39102,
+            "caiexPlayerId": 1412
+            },
+            {
+            "playerName": "Marcos Alonso",
+            "siPlayerId": 41125,
+            "caiexPlayerId": 1413
+            },
+            {
+            "playerName": "Willian",
+            "siPlayerId": 30321,
+            "caiexPlayerId": 1414
+            },
+            {
+            "playerName": "Michy Batshuayi",
+            "siPlayerId": 46472,
+            "caiexPlayerId": 1415
+            },
+            {
+            "playerName": "Eden Hazard",
+            "siPlayerId": 30937,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Arthur Boruc",
+            "siPlayerId": 51515,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Adam Smith",
+            "siPlayerId": 56670,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Steve Cook",
+            "siPlayerId": 36075,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Simon Francis",
+            "siPlayerId": 792,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Charlie Daniels",
+            "siPlayerId": 22018,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Jack Wilshere",
+            "siPlayerId": 33970,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Harry Arter",
+            "siPlayerId": 42035,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Ryan Fraser",
+            "siPlayerId": 43568,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Joshua King",
+            "siPlayerId": 39852,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Marc Pugh",
+            "siPlayerId": 5530,
+            "caiexPlayerId": 1416
+            },
+            {
+            "playerName": "Callum Wilson",
+            "siPlayerId": 43983,
+            "caiexPlayerId": 1416
+            }
+            ]
             }
